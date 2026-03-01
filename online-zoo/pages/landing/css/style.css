@@ -1,0 +1,554 @@
+﻿/* MAIN */
+
+/* HERO SECTION */
+.hero {
+  background-image: url('../../../assets/images/bg_main.png');
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.hero--inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hero-gap);
+  height: var(--hero-height);
+  padding: 0 var(--padding-horizontal);
+  padding-top: var(--padding-hero-top);
+}
+
+.hero--title {
+  margin: 0;
+  color: var(--turquoise);
+  width: var(--hero--title-width);
+}
+
+.hero--text {
+  max-width: 420px;
+  width: 420px;
+  /* margin-bottom: 10px; */
+}
+
+/* End HERO SECTION */
+
+/* WELCOME AND HOW IT WORKS SECTION */
+
+.welcome,
+.how-it-works {
+  margin-top: var(--welcome-margin-top);
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 0 var(--welcome-padding-horizontal);
+}
+
+.welcome {
+  margin-left: var(--welcome-margin-horizontal);
+}
+
+.how-it-works {
+  margin-left: var(--how-it-works-margin-horizontal);
+}
+
+.welcome .article,
+.how-it-works .article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--welcome-article-gap);
+  justify-content: center;
+}
+
+/* End WELCOME AND HOW IT WORKS SECTION */
+
+/* DONATION SECTION */
+
+.donation {
+  background-color: var(--navy);
+  margin-top: var(--space-between-sections);
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: space-between;
+  padding: 50px var(--donation-padding-horizontal);
+}
+
+.donation .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--donation-gap);
+  
+}
+
+.donation .body--text {
+  max-width: 620px;
+  margin: 0;
+}
+
+.donation .subheader {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+/* End DONATION SECTION */
+
+/* MEET THE PETS SECTION */
+
+.meet-pets {
+  margin-top: var(--space-between-sections);
+  padding: 0 var(--padding-horizontal);
+}
+
+.meet-pets .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.meet-pets .subheader {
+  max-width: 920px;
+  font-weight: 500;
+}
+
+.meet-pets .pets-carousel {
+  margin-top: var(--gap);
+}
+
+.meet-pets .pets-carousel-content {
+  overflow: hidden;
+  width: var(--pets-carousel-content-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--carousel-gap);
+}
+
+.meet-pets .pets-carousel-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--carousel-gap);
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.meet-pets .action--panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--meet-pets-action-margin-top);
+}
+
+.meet-pets .card {
+  flex: 0 0 auto;
+  width: var(--card-width);
+  height: 748px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy);
+  padding: 0;
+}
+
+.meet-pets .card--media {
+  position: relative;
+  height: 436px;
+  background: var(--navy);
+}
+
+.meet-pets .card--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.meet-pets .card--tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 22px;
+  background: var(--navy);
+  color: var(--white);
+  border-bottom-right-radius: 5px;
+}
+
+.meet-pets .card--panel {
+  padding: 30px 30px 47px;
+  text-align: center;
+  background: var(--navy);
+  text-wrap-mode: wrap;
+}
+
+.meet-pets .card--title {
+  margin: 0 0 18px;
+  color: var(--white);
+}
+
+.meet-pets .card--text {
+  margin: 0 0 28px;
+  color: var(--white);
+  text-align: center;
+  min-height: 78px;
+}
+
+.meet-pets .arrow--panel {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* End MEET THE PETS SECTION */
+
+/* PAY FEED SECTION */
+
+.pay-feed {
+  padding: var(--pay-feed-padding-top) var(--padding-horizontal) var(--pay-feed-padding-bottom);
+  margin-top: var(--space-between-sections);
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.pay-feed h2 {
+  color: var(--white);
+}
+
+.pay-feed .card {
+  background: transparent;
+  color: var(--white);
+  border: none;
+  padding: 0;
+  margin-top: var(--pay-feed-card-margin-top);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pay-feed-gap);
+}
+
+.pay-feed .first-card {
+  margin-top: 100px;
+}
+
+.pay-feed .card .card--header {
+  display: flex;
+  flex-direction: row;
+  gap: var(--pay-feed-card--header-gap);
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.pay-feed .card .card--header .line {
+  flex: 1;
+  min-width: 0;
+}
+
+.pay-feed .card .card--content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--pay-feed-card--content-gap);
+}
+
+.pay-feed .card .card--content .subheader {
+  max-width: 502px;
+}
+
+.pay-feed .card .card-image img {
+  border-radius: 5px;
+}
+
+.pay-feed .card .card-icon {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.pay-feed .card .card-icon svg {
+  color: var(--turquoise);
+}
+
+.pay-feed .card .body--text {
+  color: var(--white);
+  margin-top: 50px;
+  max-width: var(--pay-feed-card-body--text);
+}
+
+.pay-feed .card .card-action {
+  margin-top: var(--pay-feed-card-action-margin-top);
+  align-items: none;
+}
+
+/* End PAY FEED SECTION */
+
+/* TESTIMONIALS SECTION */
+
+.testimonials {
+  padding: 0 var(--padding-horizontal);
+  padding-top: 100px;
+  padding-bottom: 150px;
+  background-color: var(--navy);
+  color: var(--white);
+  background-image: url("../../../assets/images/bg_testimonials.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.testimonials .container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--testimonials-container-gap);
+  flex-wrap: nowrap;
+}
+
+.testimonials .section--content {
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonials--slider {
+  overflow: hidden;
+  width: 1060px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.testimonials .section--head {
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--testimonials-section--header-gap);
+}
+
+.testimonials .section--head h2 {
+  max-width: 440px;
+  color: var(--white);
+}
+
+.testimonials .review-card {
+  border-radius: var(--radius);
+  color: var(--black);
+  padding: 30px 50px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 515px;
+  min-height: 463px;
+  color: var(--black);
+  background: var(--white);
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
+}
+
+.testimonials .review-icon {
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 1;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  color: var(--turquoise);
+  max-height: 96px;
+  height: 96px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.testimonials .review-card .body--text {
+  min-height: 162px;
+  margin: 0;
+}
+
+.testimonials .review-card .btn--text {
+  color: var(--black);
+  margin-top: 0px;
+}
+
+.testimonials .review-card .subheader {
+  margin-top: -30px;
+}
+
+.testimonials--slider .row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.testimonials .arrow--panel {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+  margin-top: 60px;
+  margin-left: 600px;
+}
+
+.testimonials .action--panel {
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--testimonials-action--panel-margin-top);
+  color: var(--white);
+}
+
+/* End TESTIMONIALS SECTION */
+
+/* FAVOURITE ANIMALS SECTION */
+
+.favourite {
+  padding: 0 var(--padding-horizontal);
+  padding-top: var(--favourite-padding-top);
+  padding-bottom: 150px;
+  background-color: var(--white);
+  color: var(--navy);
+  display: flex;
+  flex-direction: column;
+}
+
+.favourite .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap);
+  margin-bottom: var(--favourite-center-margin-bottom);
+}
+
+.favourite .action--panel {
+  margin-bottom: 150px;
+}
+
+.favourite .center h2 {
+  max-width: 655px;
+  text-align: center;
+}
+
+.favourite .center .subheader {
+  max-width: 540px;
+  text-align: center;
+}
+
+.favourite .pet-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--carousel-gap);
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.favourite .three-row {
+  display: none;
+}
+
+.favourite .pet-gallery .row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--carousel-gap);
+}
+
+.favourite .favourite--img {
+  align-items: center;
+  text-align: center;
+  /* margin-top: 50px; */
+  /* margin-bottom: 150px; */
+}
+
+.favourite .card {
+  flex: 0 0 auto;
+  width: var(--card-width);
+  height: 658px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--navy);
+  padding: 0;
+}
+
+.favourite .card--media {
+  position: relative;
+  height: 373px;
+  background: var(--navy);
+}
+
+.favourite .card--img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.favourite .card--panel {
+  padding: 30px 25px 50px;
+  text-align: center;
+  background: var(--navy);
+  text-wrap-mode: wrap;
+}
+
+.favourite .card--text {
+  margin: 0 0 50px;
+  color: var(--white);
+  text-align: center;
+  min-height: 81px;
+}
+
+/* End FAVOURITE ANIMALS SECTION */
+
+/* End MAIN */
+
+
+
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  font: inherit;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 30, 23, 0.45);
+}
+
+.modal__content {
+  position: relative;
+  width: min(520px, calc(100% - 24px));
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.modal__close {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.modal__close::before,
+.modal__close::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: var(--text);
+  top: 14px;
+  left: 6px;
+}
+
+.modal__close::before { transform: rotate(45deg); }
+.modal__close::after { transform: rotate(-45deg); }
+
+.feedback-form {
+  display: grid;
+  gap: 12px;
+}
