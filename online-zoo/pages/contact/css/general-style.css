@@ -349,6 +349,29 @@ h3 {
   color: var(--navy);
 }
 
+.btn__arrow-noborder {
+  width: 64px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border-radius: 8px;
+  color: var(--navy);
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+}
+
+.btn__arrow-noborder svg {
+  display: block;
+}
+
+.btn__arrow-noborder:hover,
+.btn__arrow-noborder:active {
+  background: var(--navy);
+  color: var(--white);
+}
+
 /* End COMMON ELEMENTS */
 
 /* HEADER */
