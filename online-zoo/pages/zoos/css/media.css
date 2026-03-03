@@ -72,6 +72,14 @@
     gap: 50px;
   }
 
+  .side-panel {
+    width: 115px;
+  }
+  
+  .side-panel--top--live {
+    display: none;
+  }
+  
 }
 
 @media (min-width: 640px) and (max-width: 1199px) {
@@ -172,6 +180,20 @@
   .you-know--info--params {
     order: 2;
   }
+
+  
+  .side-panel {
+    width: 78px;
+  }
+
+  .side-panel--top {
+    height: 50px;
+  }
+
+  .side-panel--top--live {
+    display: none;
+  }
+
 }
 
 @media (max-width: 639px) {
@@ -297,5 +319,18 @@
 
   .params--row span {
     display: inline-block;
+  }
+
+  
+  .side-panel {
+    width: 50px;
+  }
+
+  .side-panel--top {
+    height: 50px;
+  }
+
+  .side-panel--top--live {
+    display: none;
   }
 }

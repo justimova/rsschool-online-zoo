@@ -73,3 +73,7 @@ textarea:focus {
 .action-panel .btn {
   width: 360px;
 }
+
+h1 {
+  display: none;
+}
