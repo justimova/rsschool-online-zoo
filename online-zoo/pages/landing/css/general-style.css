@@ -8,6 +8,7 @@
   --orange-dark: #D26004;
   --turquoise: #00A092;
   --turquoise-dark: #05786E;
+  --turquoise-light: #00A0924D;
   --accent: var(--orange);
   --accent-dark: var(--orange-dark);
   --font-family: "Montserrat", sans-serif;
@@ -168,7 +169,7 @@ h3 {
   background: transparent;
   color: var(--white);
   font-weight: 600;
-  font-family: var(----font-family);
+  font-family: var(--font-family);
   cursor: pointer;
   gap: 10px;
 }

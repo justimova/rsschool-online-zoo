@@ -432,4 +432,12 @@
   .modal__close::after {
     background: var(--black);
   }
+
+  #care-modal .modal__content h2 {
+    padding-top: 20px;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    letter-spacing: 0;
+  }
 }
