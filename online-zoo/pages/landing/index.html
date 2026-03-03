@@ -835,7 +835,7 @@
         </nav>
       </div>
       <div>
-        <a class="btn btn--bordered-light btn--text link-arrow" href="#">Donate for volunteers</a>
+        <a class="btn btn--bordered-light btn--text link-arrow" href="javascript:void(0)" data-open-modal="care-modal">Donate for volunteers</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -865,19 +865,45 @@
   </footer>
 
 
-  <!-- <div class="modal" id="feedback-modal" hidden>
+  <div class="modal" id="care-modal" hidden>
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content">
+      
       <button class="modal__close" data-close-modal aria-label="Close"></button>
-      <h2>Leave your feedback</h2>
-      <form class="feedback-form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" rows="4" placeholder="Message" required></textarea>
-        <button class="btn" type="submit">Submit</button>
-      </form>
+      <div class="img">
+        <img src="../../assets/images/bg_care.png" alt="Care">
+      </div>
+      <div class="content--inner">
+        <h2>together we care, save and protect!</h2>
+        <div class="body--text">
+          Your most generous gift not only cares for countless animals, but it also offers hope and a vital lifeline to the world’s most endangered wildlife relying on us to survive.
+        </div>
+        <div class="action">
+          <button class="btn btn--text btn--primary w120">
+            $20
+          </button>
+          <button class="btn btn--text btn--primary w120">
+            $30
+          </button>
+          <button class="btn btn--text btn--primary w120">
+            $50
+          </button>
+          <button class="btn btn--text btn--primary w120">
+            $80
+          </button>
+          <button class="btn btn--text btn--primary w120">
+            $100
+          </button>
+          <button class="btn btn--text btn--primary w200 m1200">
+            Other amount
+          </button>
+          <button class="btn btn--text btn--primary w200 m640">
+            Other
+          </button>
+        </div>
+      </div>
     </div>
-  </div> -->
+  </div>
 
   <script src="js/main.js"></script>
 </body>

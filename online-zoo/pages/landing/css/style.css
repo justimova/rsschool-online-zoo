@@ -503,12 +503,18 @@ textarea {
   font: inherit;
 }
 
+/* MODAL */
+
 .modal {
   position: fixed;
   inset: 0;
   z-index: 50;
   display: grid;
   place-items: center;
+}
+
+.modal[hidden] {
+  display: none !important;
 }
 
 .modal__overlay {
@@ -519,10 +525,8 @@ textarea {
 
 .modal__content {
   position: relative;
-  width: min(520px, calc(100% - 24px));
-  background: #fff;
-  border-radius: 20px;
-  padding: 24px;
+  background: var(--white);
+  border-radius: 5px;
 }
 
 .modal__close {
@@ -531,17 +535,19 @@ textarea {
   border: 0;
   background: transparent;
   position: absolute;
-  right: 12px;
-  top: 12px;
+  right: 20px;
+  top: 20px;
+  z-index: 1000;
+  cursor: pointer;
 }
 
 .modal__close::before,
 .modal__close::after {
   content: "";
   position: absolute;
-  width: 18px;
+  width: 27px;
   height: 2px;
-  background: var(--text);
+  background: var(--white);
   top: 14px;
   left: 6px;
 }
@@ -549,7 +555,64 @@ textarea {
 .modal__close::before { transform: rotate(45deg); }
 .modal__close::after { transform: rotate(-45deg); }
 
-.feedback-form {
-  display: grid;
-  gap: 12px;
+#care-modal .modal__content {
+    width: 1160px;
+}
+
+#care-modal .modal__content .img {
+  position: relative;
+  z-index: 1;
+}
+
+#care-modal .modal__content img {
+  width: 1160px;
+  height: 387px;
+  display: block;
+}
+
+
+#care-modal .modal__content .action {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#care-modal .modal__content .action .btn {
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+#care-modal .modal__content .content--inner {
+  padding: 20px 80px 50px;
+}
+
+#care-modal .modal__content .body--text {
+  max-width: 570px;
+}
+
+#care-modal .modal__content h2 {
+  max-width: 678px;
+  color: var(--accent);
+}
+
+#care-modal .content--inner {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  align-items: center;
+}
+
+#care-modal .modal__content .action .w120 {
+  width: 100px;
+}
+
+#care-modal .modal__content .action .w200px {
+  width: 260px;
+}
+
+.m640 {
+  display: none;
 }

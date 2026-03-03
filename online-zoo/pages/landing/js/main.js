@@ -82,3 +82,67 @@ document.querySelectorAll('.favourite .card').forEach((card) => {
   card.style.cursor = 'pointer';
 });
 
+
+
+// document.addEventListener('click', (e) => {
+//   const closeBtn = e.target.closest('[data-close-modal]');
+//   if (!closeBtn) return;
+
+//   const modal = closeBtn.closest('.modal');
+//   if (!modal) return;
+
+//   modal.hidden = true;
+
+//   document.body.classList.remove('no-scroll');
+// });
+
+// function openModal(id) {
+//   const modal = document.getElementById(id);
+//   if (!modal) return;
+//   modal.hidden = false;
+//   document.body.classList.add('no-scroll');
+// }
+
+const careModal = document.getElementById('care-modal');
+
+function openCareModal() {
+  if (!careModal) return;
+  careModal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden'; // опционально
+}
+
+function closeCareModal() {
+  if (!careModal) return;
+  careModal.setAttribute('hidden', '');
+  document.body.style.overflow = ''; // опционально
+}
+
+// Закрытие по клику на крестик и на overlay (оба имеют data-close-modal)
+if (careModal) {
+  careModal.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-modal]')) {
+      closeCareModal();
+    }
+  });
+
+  // закрытие по Esc (опционально)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !careModal.hasAttribute('hidden')) {
+      closeCareModal();
+    }
+  });
+}
+
+document.addEventListener('click', (e) => {
+  const opener = e.target.closest('[data-open-modal]');
+  if (!opener) return;
+
+  e.preventDefault();
+
+  const id = opener.getAttribute('data-open-modal');
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden'; // опционально
+});

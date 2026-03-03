@@ -310,3 +310,126 @@
     gap: 30px;
   }
 }
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+  #care-modal .modal__content {
+      width: 1120px;
+  }
+
+  #care-modal .modal__content img {
+    width: 1120px;
+    height: 312px;
+  }
+
+  #care-modal .modal__content .content--inner {
+    padding: 30px 60px;
+  }
+
+  #care-modal .modal__content .body--text {
+    max-width: 570px;
+  }
+
+  #care-modal .modal__content h2 {
+    max-width: 678px;
+  }
+
+  #care-modal .modal__content .action .w120 {
+    width: 90px;
+  }
+
+  #care-modal .modal__content .action .w200px {
+    width: 260px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  #care-modal .modal__content {
+      width: 640px;
+  }
+
+  #care-modal .modal__content img {
+    width: 640px;
+    height: 167px;
+  }
+
+  #care-modal .modal__content .content--inner {
+    padding: 20px 50px;
+  }
+
+  #care-modal .modal__content .body--text {
+    max-width: 485px;
+  }
+
+  #care-modal .modal__content h2 {
+    max-width: 485px;
+  }
+
+  #care-modal .modal__content .action .w120 {
+    width: 90px;
+  }
+
+  #care-modal .modal__content .action .w200px {
+    width: 260px;
+  }
+
+  #care-modal .modal__content .action {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #care-modal .modal__content .action .w120 {
+    width: 150px;
+  }
+
+   #care-modal .modal__content .action .w200 {
+    width: 150px;
+  }
+
+  .m1200 {
+    display: none;
+  }
+  .m640 {
+    display: block;
+  }
+}
+
+@media (max-width: 639px) {
+  #care-modal .modal__content {
+      width: 300px;
+  }
+
+  #care-modal .modal__content img {
+    display: none;
+  }
+
+  #care-modal .modal__content .content--inner {
+    padding: 10px;
+  }
+
+  #care-modal .modal__content .body--text {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  #care-modal .modal__content h2 {
+    max-width: 300px;
+    width: 100%
+  }
+
+  #care-modal .modal__content .action .w120 {
+    width: 110px;
+  }
+
+  #care-modal .modal__content .action .w200 {
+    width: 110px;
+  }
+
+  #care-modal .modal__content .action {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .modal__close::before,
+  .modal__close::after {
+    background: var(--black);
+  }
+}

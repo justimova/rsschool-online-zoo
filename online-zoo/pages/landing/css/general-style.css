@@ -168,6 +168,7 @@ h3 {
   background: transparent;
   color: var(--white);
   font-weight: 600;
+  font-family: var(----font-family);
   cursor: pointer;
   gap: 10px;
 }
