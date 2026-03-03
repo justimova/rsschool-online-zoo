@@ -5,6 +5,11 @@
   margin: 0 auto;
 }
 
+
+h1 {
+  display: none;
+}
+
 .map--img {
   width: 1400px;
   max-width: 1400px;

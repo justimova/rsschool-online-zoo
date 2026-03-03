@@ -147,6 +147,7 @@
   overflow: hidden;
   background: var(--navy);
   padding: 0;
+  cursor: pointer;
 }
 
 .meet-pets .card--media {

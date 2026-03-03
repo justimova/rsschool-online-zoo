@@ -54,3 +54,31 @@ document.querySelectorAll('[data-slider]').forEach((button) => {
 //     }
 //   });
 // });
+
+
+document.querySelectorAll('.meet-pets .card').forEach((card) => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;
+
+    const a = card.querySelector('a[href]');
+    if (!a) return;
+
+    window.location.href = a.href;
+  });
+
+  card.style.cursor = 'pointer';
+});
+
+document.querySelectorAll('.favourite .card').forEach((card) => {
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a, button')) return;
+
+    const a = card.querySelector('a[href]');
+    if (!a) return;
+
+    window.location.href = a.href;
+  });
+
+  card.style.cursor = 'pointer';
+});
+
