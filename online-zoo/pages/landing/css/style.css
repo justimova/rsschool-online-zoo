@@ -557,7 +557,7 @@ textarea {
 .modal__footer {
   flex: 0 0 auto;
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   /* gap: 12px;
   padding: 16px 24px; */
 }
@@ -652,37 +652,105 @@ textarea {
 
 
 
-
-#donation-modal h3 {
+/* DONATTION MODAL 1*/
+.donation-modal h3 {
   margin: 0 auto;
 }
 
-#donation-modal .modal__body {
+.donation-modal .modal__body {
   width: 920px;
 }
 
-#donation-modal .info {
-  font-weight: 600;
+.donation-modal .info {
   font-size: 18px;
   line-height: 150%;
   letter-spacing: 0;
   border-bottom: 1px solid #A4A8AE;
+  font-weight: 600;
   height: 87px;
   padding-left: 120px;
   padding-top: 50px;
   padding-bottom: 10px;
 }
 
-#donation-modal .form {
+.donation-modal .form {
   padding: 40px 120px 0;
 }
 
-#donation-modal .modal__footer {
+.donation-modal .modal__footer {
   padding: 50px 120px;
 }
 
-#donation-modal .modal__footer .btn {
+#donation-modal .btn-nav {
+  width: 360px;
+}
+.donation-modal .btn-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.donation-modal .btn-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#donation2-modal .modal__footer,
+#donation3-modal .modal__footer {
+  justify-content: center;
+}
+
+#donation3-modal .modal__footer {
+  padding-top: 100px;
+}
+
+#donation2-modal .btn-nav {
+  gap: 70px;
+}
+
+#donation3-modal .btn-nav {
+  gap: 50px;
+}
+
+.donation-modal .modal__footer .btn {
   padding: 26px 50px;
+}
+
+.donation-modal .btn--ghost {
+  color: var(--turquoise);
+  text-decoration: underline;
+}
+
+.donation-modal .btn--ghost:hover,
+.donation-modal .btn--ghost:active {
+  background: transparent;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.card-number input {
+  width: 440px;
+}
+
+.card-cvv input {
+  width: 200px;
+}
+
+.exp-date {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.exp-date .cs {
+  width: 200px;
 }
 
 .form-field {
@@ -703,6 +771,10 @@ textarea {
 
 .required {
   color: var(--turquoise);
+}
+
+.form-field.margin {
+  margin-top: 50px;
 }
 
 .toggle{

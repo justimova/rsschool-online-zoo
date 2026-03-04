@@ -381,15 +381,51 @@
     width: 150px;
   }
 
-   #care-modal .modal__content .action .w200 {
+  #care-modal .modal__content .action .w200 {
     width: 150px;
   }
 
   .m1200 {
     display: none;
   }
+
   .m640 {
     display: block;
+  }
+
+  /* DONATTION MODAL 1*/
+  .donation-modal .modal__body {
+    width: 600px;
+  }
+
+  .donation-modal .form {
+    padding: 40px 77px 0;
+  }
+
+  .donation-modal .info {
+    height: 87px;
+    padding-left: 77px;
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+
+  .donation-modal .form-field.special {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .donation-modal .row-amount .radio {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .donation-modal .row-amount .radio .toggle,
+  .donation-modal .row-amount .radio .toggle-ui {
+    width: 135px;
+  }
+
+  .donation-modal .modal__footer {
+    padding: 50px 77px;
   }
 }
 
@@ -439,5 +475,40 @@
     font-size: 26px;
     line-height: 130%;
     letter-spacing: 0;
+  }
+
+  /* DONATTION MODAL 1*/
+  .donation-modal .modal__body {
+    width: 300px;
+  }
+
+  .donation-modal .form {
+    padding: 30px 10px 0;
+  }
+
+  .donation-modal .info {
+    height: 47px;
+    padding-left: 46px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  .donation-modal .form-field.special {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .donation-modal .row-amount .radio {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .donation-modal .row-amount .radio .toggle,
+  .donation-modal .row-amount .radio .toggle-ui {
+    width: 135px;
+  }
+
+  .donation-modal .modal__footer {
+    padding: 50px 77px;
   }
 }
