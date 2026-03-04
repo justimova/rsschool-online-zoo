@@ -82,6 +82,7 @@
   border-radius: 5px;
   overflow: hidden;
   border: none;
+  cursor: pointer;
 }
 
 .item img {
