@@ -1,4 +1,9 @@
 @media (min-width: 1200px) and (max-width: 1919px) {
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
   /* CAMS SECTION */
   .cams--inner {
     width: 100%;
@@ -83,6 +88,11 @@
 }
 
 @media (min-width: 640px) and (max-width: 1199px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   /* CAMS SECTION */
   .cams--inner {
     width: 100%;
@@ -197,6 +207,11 @@
 }
 
 @media (max-width: 639px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   /* CAMS SECTION */
   .cams--inner {
     width: 100%;

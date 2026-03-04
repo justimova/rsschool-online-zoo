@@ -696,6 +696,14 @@ textarea {
   justify-content: space-between;
 }
 
+#donation-modal .modal__footer {
+  justify-content: center ;
+}
+#donation-modal .btn-nav {
+  justify-content: flex-end;
+  margin-left: 60px;
+}
+
 #donation2-modal .modal__footer,
 #donation3-modal .modal__footer {
   justify-content: center;
