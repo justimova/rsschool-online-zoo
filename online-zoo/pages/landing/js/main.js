@@ -176,6 +176,63 @@ if (donationModal) {
   });
 }
 
+const donation2Modal = document.getElementById('donation2-modal');
+
+function openDonation2Modal() {
+  if (!donation2Modal) return;
+  donation2Modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDonation2Modal() {
+  if (!donation2Modal) return;
+  donation2Modal.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+
+if (donation2Modal) {
+  donation2Modal.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-modal]')) {
+      closeDonation2Modal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !donation2Modal.hasAttribute('hidden')) {
+      closeDonation2Modal();
+    }
+  });
+}
+
+const donation3Modal = document.getElementById('donation3-modal');
+
+function openDonation3Modal() {
+  if (!donation2Modal) return;
+  donation3Modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDonation3Modal() {
+  if (!donation3Modal) return;
+  donation3Modal.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+
+if (donation3Modal) {
+  donation3Modal.addEventListener('click', (e) => {
+    if (e.target.closest('[data-close-modal]')) {
+      closeDonation3Modal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !donation3Modal.hasAttribute('hidden')) {
+      closeDonation3Modal();
+    }
+  });
+}
+
+
 document.addEventListener('click', (e) => {
   const opener = e.target.closest('[data-open-modal]');
   if (!opener) return;
@@ -187,6 +244,26 @@ document.addEventListener('click', (e) => {
   if (!modal) return;
 
   modal.removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+});
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-next-modal]');
+  if (!btn) return;
+
+  e.preventDefault();
+
+  const nextId = btn.getAttribute('data-next-modal');
+  const nextModal = document.getElementById(nextId);
+  if (!nextModal) return;
+
+  const parentModal = btn.closest('.modal');
+  if (parentModal) parentModal.setAttribute('hidden', '');
+
+
+  nextModal.removeAttribute('hidden');
+
+
   document.body.style.overflow = 'hidden';
 });
 

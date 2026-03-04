@@ -865,6 +865,8 @@
   </footer>
 
   <!-- MODAL WINDOWS -->
+
+  <!-- CARE MODAL -->
   <div class="modal" id="care-modal" data-modal hidden>
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content" role="dialog" aria-modal="true">
@@ -905,7 +907,8 @@
     </div>
   </div>
 
-  <div class="modal" id="donation-modal" data-modal hidden>
+  <!-- DONATION MODAL - STEP1 -->
+  <div class="modal donation-modal" id="donation-modal" data-modal hidden>
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title">
       
@@ -966,7 +969,7 @@
               <input class="body--text w200" type="text">
             </div>
 
-            <div class="form-field row">
+            <div class="form-field row special">
               <label class="toggle w200">
                 <input type="checkbox">
                 <span class="toggle-ui">for special pet</span>
@@ -1018,7 +1021,7 @@
                   </div>
                 </div>
 
-                <input type="hidden" name="favourite" value="" />
+                <input type="hidden" name="favourite" value="">
               </div>
             </div>
             
@@ -1037,8 +1040,127 @@
       </div>
 
       <div class="modal__footer">
-        <div>
-          <a class="btn btn--primary btn--text link-arrow" href="javascript:void(0)">next</a>
+        <div class="btn-nav"></div>
+          <div class="btn-next">
+            <a class="btn btn--primary btn--text link-arrow" href="#" data-next-modal="donation2-modal" data-close-parent-modal>next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- DONATION MODAL - STEP2 -->
+  <div class="modal donation-modal" id="donation2-modal" data-modal hidden>
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title">
+      
+      <div class="modal__header">
+        <h3 class="modal__title" id="donate-title">make your donation</h3>
+
+        <button class="modal__close" data-close-modal aria-label="Close"></button>
+      </div>
+      <div class="modal__body">
+        <div class="info">
+          Billing Information:
+        </div>
+        <div class="form">
+          <div class="form-field">
+            <label class="body--text"><span class="required">*</span> Your Name </label>
+            <input class="body--text" type="text" placeholder="First and last name">
+          </div>
+
+          <div class="form-field margin">
+            <label class="body--text"><span class="required">*</span> Your Email Address</label>
+            <input class="body--text" type="text" placeholder="Enter your email">
+            <div class="body--text">
+You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <div class="btn-nav">
+          <div class="btn-prev">
+            <a class="btn btn--ghost btn--text" href="#" data-next-modal="donation-modal" data-close-parent-modal>back</a>
+          </div>
+          <div class="btn-next">
+            <a class="btn btn--primary btn--text link-arrow" href="#" data-next-modal="donation3-modal" data-close-parent-modal>next</a>
+          </div>          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- DONATION MODAL - STEP3 -->
+  <div class="modal donation-modal" id="donation3-modal" data-modal hidden>
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title">
+      
+      <div class="modal__header">
+        <h3 class="modal__title" id="donate-title">make your donation</h3>
+
+        <button class="modal__close" data-close-modal aria-label="Close"></button>
+      </div>
+      <div class="modal__body">
+        <div class="info">
+          Payment Information:
+        </div>
+        <div class="form">
+
+          <div class="card-row">
+            <div class="form-field card-number">
+              <label class="body--text"><span class="required">*</span> Credit Card Number</label>
+              <input class="body--text" type="text">
+            </div>
+
+            <div class="form-field card-cvv">
+              <label class="body--text"><span class="required">*</span> CVV Number</label>
+              <input class="body--text" type="text">
+            </div>
+          </div>
+
+          <div class="form-field margin">
+            <label class="body--text"><span class="required">*</span> Expiration Date</label>
+            <div class="exp-date">
+              <div class="cs" id="favMonth" data-has-value="false">
+                <button class="cs__btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cs__text" data-placeholder="Month">Month</span>
+                  <span class="cs__icon" aria-hidden="true">
+                    <svg class="cs__chev" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+
+              <div class="cs" id="favYear" data-has-value="false">
+                <button class="cs__btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cs__text" data-placeholder="Year">Year</span>
+                  <span class="cs__icon" aria-hidden="true">
+                    <svg class="cs__chev" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <div class="btn-nav">
+          <div class="btn-prev">
+            <a class="btn btn--ghost btn--text" href="#" data-next-modal="donation2-modal" data-close-parent-modal>back</a>
+          </div>
+          <div class="btn-next">
+            <a class="btn btn--accent btn--text link-arrow" href="javascript:void(0)" data-close-modal>complete donation</a>
+          </div>          
         </div>
       </div>
     </div>
