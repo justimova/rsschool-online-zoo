@@ -1,0 +1,48 @@
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .map--img {
+    width: 100%;
+  }
+
+  .map--inner {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    gap: 30px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  .map--img {
+    width: 100%;
+  }
+
+  .map--inner {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 639px) {
+  .map--img {
+    min-width: 360px;
+    width: 100%;
+  }
+
+  .map--inner {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    gap: 30px;
+  }
+
+  .map h2 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 130%;
+    letter-spacing: 0;
+    max-width: 301px;
+  }
+}

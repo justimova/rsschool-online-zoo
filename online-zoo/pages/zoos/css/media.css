@@ -1,0 +1,351 @@
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  /* CAMS SECTION */
+  .cams--inner {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+  
+  .cams--img {
+    width: 100%;
+    min-width: 1025px;
+    padding-left: 135px;
+  }
+
+  .cams h2 {
+    margin-bottom: 30px;
+  }
+
+  .cams-current {
+    margin-bottom: 10px;
+  }
+
+  .cams--carousel--inner {
+    width: 991px;
+  }
+
+  .item {
+    width: 271px;
+    /* height: 215px; */
+  }
+
+  .item img {
+    width: 265px;
+    height: auto;
+    /* height: 209px; */
+  }
+
+  .cams--carousel--inner .btn__arrow-noborder {
+    width: 40px;
+    height: 40px;
+  }
+
+  .track {
+    gap: 20px;
+  }
+
+  /* DONATION SECTION */
+  .donation--inner {
+    width: 1120px;
+    padding: 30px 0;
+    gap: 60px;
+  }
+
+  .donation .container {
+    max-width: 740px;
+  }
+
+  /* YOU KNOW SECTION */
+  .you-know--inner {
+    width: 1120px;
+    padding: 130px 0 100px;
+  }
+
+  .you-know--card {
+    width: 930px;
+    padding: 30px 95px 35px;
+    margin-bottom: 100px;
+  }
+
+  .you-know--info {
+    width: 1120px;
+    gap: 50px;
+  }
+
+  .side-panel {
+    width: 115px;
+  }
+  
+  .side-panel--top--live {
+    display: none;
+  }
+  
+}
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  .header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* CAMS SECTION */
+  .cams--inner {
+    width: 100%;
+    padding-top: 17px;
+    padding-bottom: 80px;
+  }
+  
+  .cams--img {
+    width: 100%;
+    padding-left: 78px;
+    min-width: 542px;
+  }
+  
+  .cams h2 {
+    margin-bottom: 26px;
+  }
+
+  .cams-current {
+    margin-bottom: 88px;
+  }
+
+  .cams--carousel--inner {
+    width: 451px;
+  }
+
+  .cams--carousel--inner .btn__arrow-noborder {
+    display: none;
+  }
+
+  .item {
+    width: 141px;
+    /* height: 112px; */
+  }
+
+  .item img {
+    width: 135px;
+    /* height: 106px; */
+  }
+  
+  .track {
+    gap: 20px;
+    padding-inline-start: 0;
+  }
+
+  /* DONATION SECTION */
+  .donation--inner {
+    width: 600px;
+    padding: 20px 0;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .donation .container {
+    max-width: 100%;
+  }
+
+  .donation .action {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* YOU KNOW SECTION */
+  .you-know--inner {
+    width: 600px;
+    padding: 80px 0 100px;
+  }
+
+  .you-know--card {
+    width: 100%;
+    padding: 24px 30px 50px;
+    gap: 30px;
+    margin-bottom: 80px;
+  }  
+
+  .you-know--info {
+    width: 100%;
+    min-width: 600px;
+    gap: 50px;
+  }
+
+  .you-know--info--short {
+    flex-direction: column;
+    gap: 80px;
+  }
+  
+  .you-know--info--img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .you-know--info--img {
+    order: 1;
+  }
+
+  .you-know--info--params {
+    order: 2;
+  }
+
+  
+  .side-panel {
+    width: 78px;
+  }
+
+  .side-panel--top {
+    height: 50px;
+  }
+
+  .side-panel--top--live {
+    display: none;
+  }
+
+}
+
+@media (max-width: 639px) {
+  .header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* CAMS SECTION */
+  .cams--inner {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  .cams--img {
+    min-width: 270px;
+    width: 100%;
+    padding-left: 50px;
+  }
+
+  .cams h2 {
+    margin-bottom: 20px;
+  }
+
+  .cams--carousel h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .cams-current {
+    margin-bottom: 20px;
+  }
+
+  .cams--carousel--inner {
+    width: 306px;
+  }
+
+  .cams--carousel--inner .btn__arrow-noborder {
+    display: none;
+  }
+
+  .item {
+    width: 146px;
+    /* height: 116px; */
+  }
+
+  .item img {
+    width: 140px;
+  }
+  
+  .track {
+    gap: 20px;
+    padding-inline-start: 10px;
+  }
+
+  /* DONATION SECTION */
+  .donation--inner {
+    width: 300px;
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .donation .container {
+    max-width: 100%;
+  }
+
+  /* YOU KNOW SECTION */
+  .you-know--inner {
+    width: 300px;
+    padding: 50px 0 80px;
+  }
+
+  .you-know--card {
+    width: 100%;
+    padding: 30px 10px 50px;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .you-know--card h3 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 100%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 0;
+  }
+
+  .you-know--info {
+    width: 100%;
+    min-width: 300px;
+    gap: 30px;
+  }
+
+  .you-know--info--short {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .you-know--info--img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .you-know--info--img {
+    order: 1;
+  }
+
+  .you-know--info--params {
+    order: 2;
+  }
+  
+  .you-know--info--params {
+    gap: 20px;
+  }
+
+  .params--row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .params--row span {
+    display: inline-block;
+  }
+
+  
+  .side-panel {
+    width: 50px;
+  }
+
+  .side-panel--top {
+    height: 50px;
+  }
+
+  .side-panel--top--live {
+    display: none;
+  }
+}
