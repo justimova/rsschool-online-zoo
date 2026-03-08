@@ -94,7 +94,8 @@ h1 {
   letter-spacing: 0;
 }
 
-#register-button:disabled {
+#register-button:disabled,
+#signin-button:disabled {
   opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
