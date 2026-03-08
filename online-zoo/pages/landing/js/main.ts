@@ -58,7 +58,7 @@ document.querySelectorAll('[data-slider]').forEach((button) => {
 
 document.querySelectorAll('.meet-pets .card').forEach((card) => {
   card.addEventListener('click', (e) => {
-    if (e.target.closest('a, button')) return;
+    if ((e.target as Element)?.closest('a, button')) return;
 
     const a = card.querySelector('a[href]');
     if (!a) return;
@@ -71,7 +71,7 @@ document.querySelectorAll('.meet-pets .card').forEach((card) => {
 
 document.querySelectorAll('.favourite .card').forEach((card) => {
   card.addEventListener('click', (e) => {
-    if (e.target.closest('a, button')) return;
+    if ((e.target as Element).closest('a, button')) return;
 
     const a = card.querySelector('a[href]');
     if (!a) return;
@@ -105,13 +105,13 @@ document.querySelectorAll('.favourite .card').forEach((card) => {
 
 const careModal = document.getElementById('care-modal');
 
-function openCareModal() {
-  if (!careModal) return;
-  careModal.removeAttribute('hidden');
-  document.body.style.overflow = 'hidden';
-}
+// function openCareModal(): void {
+//   if (!careModal) return;
+//   careModal.removeAttribute('hidden');
+//   document.body.style.overflow = 'hidden';
+// }
 
-function closeCareModal() {
+function closeCareModal(): void {
   if (!careModal) return;
   careModal.setAttribute('hidden', '');
   document.body.style.overflow = '';
@@ -119,7 +119,7 @@ function closeCareModal() {
 
 if (careModal) {
   careModal.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-modal]')) {
+    if ((e.target as Element).closest('[data-close-modal]')) {
       closeCareModal();
     }
   });
@@ -150,13 +150,13 @@ if (careModal) {
 
 const donationModal = document.getElementById('donation-modal');
 
-function openDonationModal() {
-  if (!donationModal) return;
-  donationModal.removeAttribute('hidden');
-  document.body.style.overflow = 'hidden';
-}
+// function openDonationModal(): void {
+//   if (!donationModal) return;
+//   donationModal.removeAttribute('hidden');
+//   document.body.style.overflow = 'hidden';
+// }
 
-function closeDonationModal() {
+function closeDonationModal(): void {
   if (!donationModal) return;
   donationModal.setAttribute('hidden', '');
   document.body.style.overflow = '';
@@ -164,7 +164,7 @@ function closeDonationModal() {
 
 if (donationModal) {
   donationModal.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-modal]')) {
+    if ((e.target as Element).closest('[data-close-modal]')) {
       closeDonationModal();
     }
   });
@@ -178,13 +178,13 @@ if (donationModal) {
 
 const donation2Modal = document.getElementById('donation2-modal');
 
-function openDonation2Modal() {
-  if (!donation2Modal) return;
-  donation2Modal.removeAttribute('hidden');
-  document.body.style.overflow = 'hidden';
-}
+// function openDonation2Modal(): void {
+//   if (!donation2Modal) return;
+//   donation2Modal.removeAttribute('hidden');
+//   document.body.style.overflow = 'hidden';
+// }
 
-function closeDonation2Modal() {
+function closeDonation2Modal(): void {
   if (!donation2Modal) return;
   donation2Modal.setAttribute('hidden', '');
   document.body.style.overflow = '';
@@ -192,7 +192,7 @@ function closeDonation2Modal() {
 
 if (donation2Modal) {
   donation2Modal.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-modal]')) {
+    if ((e.target as Element).closest('[data-close-modal]')) {
       closeDonation2Modal();
     }
   });
@@ -206,13 +206,13 @@ if (donation2Modal) {
 
 const donation3Modal = document.getElementById('donation3-modal');
 
-function openDonation3Modal() {
-  if (!donation2Modal) return;
-  donation3Modal.removeAttribute('hidden');
-  document.body.style.overflow = 'hidden';
-}
+// function openDonation3Modal(): void {
+//   if (!donation2Modal) return;
+//   donation3Modal?.removeAttribute('hidden');
+//   document.body.style.overflow = 'hidden';
+// }
 
-function closeDonation3Modal() {
+function closeDonation3Modal(): void {
   if (!donation3Modal) return;
   donation3Modal.setAttribute('hidden', '');
   document.body.style.overflow = '';
@@ -220,7 +220,7 @@ function closeDonation3Modal() {
 
 if (donation3Modal) {
   donation3Modal.addEventListener('click', (e) => {
-    if (e.target.closest('[data-close-modal]')) {
+    if ((e.target as Element).closest('[data-close-modal]')) {
       closeDonation3Modal();
     }
   });
@@ -234,7 +234,7 @@ if (donation3Modal) {
 
 
 document.addEventListener('click', (e) => {
-  const opener = e.target.closest('[data-open-modal]');
+  const opener = (e.target as Element).closest('[data-open-modal]');
   if (!opener) return;
 
   e.preventDefault();
@@ -248,13 +248,13 @@ document.addEventListener('click', (e) => {
 });
 
 document.addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-next-modal]');
+  const btn = (e.target as Element).closest('[data-next-modal]');
   if (!btn) return;
 
   e.preventDefault();
 
   const nextId = btn.getAttribute('data-next-modal');
-  const nextModal = document.getElementById(nextId);
+  const nextModal = document.getElementById(nextId ?? '');
   if (!nextModal) return;
 
   const parentModal = btn.closest('.modal');
@@ -273,61 +273,64 @@ document.addEventListener('click', (e) => {
 
 
 
-(function () {
+(function (): void {
   const root = document.getElementById('favSelect');
-  const btn = root.querySelector('.cs__btn');
-  const text = root.querySelector('.cs__text');
-  const panel = root.querySelector('.cs__panel');
-  const list = root.querySelector('.cs__list');
-  const opts = Array.from(root.querySelectorAll('.cs__opt'));
-  const hidden = root.querySelector('input[type="hidden"]');
+  const btn = root?.querySelector('.cs__btn');
+  const text = root?.querySelector('.cs__text');
+  const panel = root?.querySelector('.cs__panel');
+  const list = root?.querySelector('.cs__list');
+  const opts = Array.from(root?.querySelectorAll('.cs__opt'));
+  const hidden = root?.querySelector('input[type="hidden"]');
 
-  const upBtn = root.querySelector('.cs__scroll-up');
-  const downBtn = root.querySelector('.cs__scroll-down');
-  const track = root.querySelector('.cs__track');
-  const thumb = root.querySelector('.cs__thumb');
+  const upBtn = root?.querySelector('.cs__scroll-up');
+  const downBtn = root?.querySelector('.cs__scroll-down');
+  const track = root?.querySelector('.cs__track');
+  const thumb = root?.querySelector('.cs__thumb');
 
   let open = false;
   let drag = null;
 
-  function setOpen(next) {
+  function setOpen(next): void {
     open = next;
-    root.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    root?.classList.toggle('is-open', open);
+    btn?.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) {
       syncThumb();
       // focus panel for Esc support (without stealing tab order too aggressively)
-      panel.focus({ preventScroll: true });
+      panel?.focus({ preventScroll: true });
     }
   }
 
-  function close() { setOpen(false); }
-  function toggle() { setOpen(!open); }
+  function close(): void { setOpen(false); }
+  function toggle(): void { setOpen(!open); }
 
-  function setValue(optEl) {
+  function setValue(optEl): void {
     opts.forEach(o => o.setAttribute('aria-selected', 'false'));
     optEl.setAttribute('aria-selected', 'true');
 
     const label = optEl.textContent.trim();
     const val = optEl.getAttribute('data-value') || label;
 
-    text.textContent = label;
-    root.dataset.hasValue = 'true';
-    hidden.value = val;
+    if (text)
+      text.textContent = label;
+    if (root)
+      root.dataset.hasValue = 'true';
+    if (hidden)
+      hidden.value = val;
   }
 
-  function ensureSelectedInView() {
-    const sel = root.querySelector('.cs__opt[aria-selected="true"]');
+  function ensureSelectedInView(): void {
+    const sel = root?.querySelector('.cs__opt[aria-selected="true"]');
     if (sel) sel.scrollIntoView({ block: 'nearest' });
   }
 
   // Thumb sizing/position based on list scroll
-  function syncThumb() {
-    const view = list.clientHeight;
-    const total = list.scrollHeight;
-    const trackH = track.clientHeight;
+  function syncThumb(): void {
+    const view = list?.clientHeight ?? 0;
+    const total = list?.scrollHeight ?? 0;
+    const trackH = track?.clientHeight ?? 0;
 
-    if (total <= view) {
+    if (total <= view && thumb) {
       thumb.style.height = '0px';
       thumb.style.transform = 'translateY(0px)';
       return;
@@ -336,30 +339,33 @@ document.addEventListener('click', (e) => {
     const minH = 54;
     const h = Math.max(minH, Math.round((view / total) * trackH));
     const maxTop = trackH - h;
-    const top = Math.round((list.scrollTop / (total - view)) * maxTop);
+    const top = Math.round((list?.scrollTop ?? 0 / (total - view)) * maxTop);
 
-    thumb.style.height = h + 'px';
-    thumb.style.transform = `translateY(${top}px)`;
+    if (thumb) {
+      thumb.style.height = h + 'px';
+      thumb.style.transform = `translateY(${top}px)`;
+    }
   }
 
-  function scrollByAmount(px) {
-    list.scrollBy({ top: px, left: 0, behavior: 'smooth' });
+  function scrollByAmount(px): void {
+    list?.scrollBy({ top: px, left: 0, behavior: 'smooth' });
   }
 
-  btn.addEventListener('click', toggle);
+  btn?.addEventListener('click', toggle);
 
   opts.forEach(opt => {
     opt.setAttribute('aria-selected', 'false');
     opt.addEventListener('click', () => {
       setValue(opt);
       close();
-      btn.focus();
+      btn?.focus();
     });
   });
 
   // close on outside click
   document.addEventListener('mousedown', (e) => {
-    if (!root.contains(e.target)) close();
+    if (!root?.contains(e.target))
+      close();
   });
 
   // keyboard
@@ -368,24 +374,24 @@ document.addEventListener('click', (e) => {
     if (e.key === 'Escape') {
       e.preventDefault();
       close();
-      btn.focus();
+      btn?.focus();
     }
   });
 
-  list.addEventListener('scroll', syncThumb);
+  list?.addEventListener('scroll', syncThumb);
 
-  upBtn.addEventListener('click', () => scrollByAmount(-120));
-  downBtn.addEventListener('click', () => scrollByAmount(120));
+  upBtn?.addEventListener('click', () => scrollByAmount(-120));
+  downBtn?.addEventListener('click', () => scrollByAmount(120));
 
   // drag thumb
-  thumb.addEventListener('mousedown', (e) => {
+  thumb?.addEventListener('mousedown', (e) => {
     e.preventDefault();
-    const rect = track.getBoundingClientRect();
+    const rect = track?.getBoundingClientRect();
     const thumbRect = thumb.getBoundingClientRect();
     drag = {
       startY: e.clientY,
-      startTop: thumbRect.top - rect.top,
-      trackH: rect.height,
+      startTop: thumbRect.top - (rect?.top ?? 0),
+      trackH: rect?.height,
       thumbH: thumbRect.height
     };
   });
@@ -393,8 +399,8 @@ document.addEventListener('click', (e) => {
   document.addEventListener('mousemove', (e) => {
     if (!drag) return;
 
-    const total = list.scrollHeight;
-    const view = list.clientHeight;
+    const total = list?.scrollHeight ?? 0;
+    const view = list?.clientHeight ?? 0;
     if (total <= view) return;
 
     const maxTop = drag.trackH - drag.thumbH;
@@ -402,7 +408,8 @@ document.addEventListener('click', (e) => {
     nextTop = Math.max(0, Math.min(maxTop, nextTop));
 
     const ratio = nextTop / maxTop;
-    list.scrollTop = ratio * (total - view);
+    if (list)
+      list.scrollTop = ratio * (total - view);
     syncThumb();
   });
 
@@ -414,12 +421,14 @@ document.addEventListener('click', (e) => {
   // but keep placeholder like in screenshot? comment out previous 2 lines if you want placeholder initially.
 
   // If you want placeholder initially exactly like on screenshot:
-  root.dataset.hasValue = 'false';
-  text.textContent = text.dataset.placeholder;
+  if (root)
+    root.dataset.hasValue = 'false';
+  if (text)
+    text.textContent = text.dataset.placeholder;
 
   // when open, keep selected in view
   const obs = new MutationObserver(() => {
-    if (root.classList.contains('is-open')) {
+    if (root?.classList.contains('is-open')) {
       ensureSelectedInView();
       syncThumb();
     }
