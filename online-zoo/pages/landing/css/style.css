@@ -13,8 +13,10 @@
   flex-direction: column;
   gap: var(--hero-gap);
   height: var(--hero-height);
-  padding: 0 var(--padding-horizontal);
+  /* padding: 0 var(--padding-horizontal); */
   padding-top: var(--padding-hero-top);
+  margin: 0 auto;
+  width: 1400px; 
 }
 
 .hero--title {
@@ -206,10 +208,17 @@
 /* PAY FEED SECTION */
 
 .pay-feed {
-  padding: var(--pay-feed-padding-top) var(--padding-horizontal) var(--pay-feed-padding-bottom);
+  padding-top: var(--pay-feed-padding-top);
+  padding-bottom: var(--pay-feed-padding-bottom);
   margin-top: var(--space-between-sections);
   background-color: var(--navy);
   color: var(--white);
+}
+
+.pay-feed--inner {
+  padding: 0;
+  width: 1400px !important;
+  margin: 0 auto;
 }
 
 .pay-feed h2 {
@@ -283,7 +292,7 @@
 /* TESTIMONIALS SECTION */
 
 .testimonials {
-  padding: 0 var(--padding-horizontal);
+  /* padding: 0 var(--padding-horizontal); */
   padding-top: 100px;
   padding-bottom: 150px;
   background-color: var(--navy);
@@ -299,6 +308,8 @@
   flex-direction: row;
   gap: var(--testimonials-container-gap);
   flex-wrap: nowrap;
+  margin: 0 auto;
+  width: 1400px;
 }
 
 .testimonials .section--content {
@@ -394,13 +405,15 @@
 /* FAVOURITE ANIMALS SECTION */
 
 .favourite {
-  padding: 0 var(--padding-horizontal);
+  /* padding: 0 var(--padding-horizontal); */
   padding-top: var(--favourite-padding-top);
   padding-bottom: 150px;
   background-color: var(--white);
   color: var(--navy);
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 1400px;
 }
 
 .favourite .center {
@@ -446,6 +459,8 @@
 .favourite .favourite--img {
   align-items: center;
   text-align: center;
+  margin: 0 auto;
+  
   /* margin-top: 50px; */
   /* margin-bottom: 150px; */
 }
