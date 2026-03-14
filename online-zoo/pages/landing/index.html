@@ -1017,7 +1017,7 @@
                 <span class="toggle-ui">Other amount</span>
               </label>
 
-              <input class="body--text w200" type="text">
+              <input class="body--text w200 other-amount" id="other-amount" type="text">
             </div>
 
             <div class="form-field row special">
@@ -1038,18 +1038,7 @@
 
                 <div class="cs__panel" role="listbox" tabindex="-1">
                   <div class="cs__panel-inner">
-                    <ul class="cs__list">
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="lukas">Lukas the Panda</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="andy">Andy the Lemur</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="glen">Glen the Gorilla</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="mike">Mike the Alligator</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="sam-lora">Sam &amp; Lora the eagles family</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="liz">Liz the Koala</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="shake">Shake the Lion</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="senja">Senja the Tiger</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="nina">Nina the Narwhal</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="oscar">Oscar the Otter</li>
-                      <li class="cs__opt" role="option" tabindex="-1" data-value="penny">Penny the Penguin</li>
+                    <ul class="cs__list" id="special-pet">
                     </ul>
 
                     <div class="cs__scroll" aria-hidden="true">
@@ -1093,16 +1082,56 @@
       <div class="modal__footer">
         <div class="btn-nav">
           <div class="btn-next">
-            <a class="btn btn--primary btn--text link-arrow" href="#" data-next-modal="donation2-modal" data-close-parent-modal>next</a>
+            <a class="btn btn--primary btn--text link-arrow" id="donation-next-button" href="#" data-next-modal="donation2-modal" data-close-parent-modal>next</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
   <!-- DONATION MODAL - STEP2 -->
   <div class="modal donation-modal" id="donation2-modal" data-modal hidden>
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title2">
+      <div class="modal__header">
+        <h3 class="modal__title" id="donate-title2">make your donation</h3>
+
+        <button class="modal__close" data-close-modal aria-label="Close"></button>
+      </div>
+      <div class="modal__body">
+        <div class="info">
+          Billing Information:
+        </div>
+        <div class="form">
+          <div class="form-field">
+            <label class="body--text" for="donation2-name"><span class="required">*</span> Your Name </label>
+            <input id="donation2-name" class="body--text" type="text" placeholder="First and last name">
+          </div>
+
+          <div class="form-field margin">
+            <label class="body--text" for="donation2-email"><span class="required">*</span> Your Email Address</label>
+            <input id="donation2-email" class="body--text" type="text" placeholder="Enter your email">
+            <div class="body--text">
+              You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <div class="btn-nav">
+          <div class="btn-prev">
+            <a class="btn btn--ghost btn--text" href="#" data-next-modal="donation-modal" data-close-parent-modal>back</a>
+          </div>
+          <div class="btn-next">
+            <a class="btn btn--primary btn--text link-arrow" href="#" data-next-modal="donation3-modal" data-close-parent-modal>next</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- DONATION MODAL - STEP2 -->
+  <!-- <div class="modal donation-modal" id="donation2-modal" data-modal hidden>
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title2">
       
@@ -1143,11 +1172,164 @@ You will receive emails from the Online Zoo, including updates and news on the l
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
 
   <!-- DONATION MODAL - STEP3 -->
   <div class="modal donation-modal" id="donation3-modal" data-modal hidden>
+    <div class="modal__overlay" data-close-modal></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title3">
+      <div class="modal__header">
+        <h3 class="modal__title" id="donate-title3">make your donation</h3>
+
+        <button class="modal__close" data-close-modal aria-label="Close"></button>
+      </div>
+
+      <div class="modal__body">
+        <div class="info">
+          Payment Information:
+        </div>
+
+        <div class="form">
+          <div class="form-field" id="donation3-saved-cards-field" hidden style="margin-bottom: 40px;">
+            <label class="body--text" for="donation3-saved-card-value">Saved cards</label>
+
+            <div class="cs" id="donation3-saved-card-select" data-has-value="false">
+              <button class="cs__btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="cs__text" data-placeholder="Choose saved card">Choose saved card</span>
+                <span class="cs__icon" aria-hidden="true">
+                  <svg class="cs__chev" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </button>
+
+              <div class="cs__panel" role="listbox" tabindex="-1">
+                <div class="cs__panel-inner">
+                  <ul class="cs__list" id="donation3-saved-card-list"></ul>
+                </div>
+              </div>
+
+              <input id="donation3-saved-card-value" type="hidden" value="">
+            </div>
+          </div>
+
+          <div class="card-row">
+            <div class="form-field card-number">
+              <label class="body--text" for="donation3-card-number"><span class="required">*</span> Credit Card Number</label>
+              <input id="donation3-card-number" class="body--text" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="16">
+            </div>
+
+            <div class="form-field card-cvv">
+              <label class="body--text" for="donation3-cvv"><span class="required">*</span> CVV Number</label>
+              <input id="donation3-cvv" class="body--text" type="text" inputmode="numeric" autocomplete="cc-csc" maxlength="3">
+            </div>
+          </div>
+
+          <!-- <div class="form-field margin">
+            <label class="body--text"><span class="required">*</span> Expiration Date</label>
+
+            <div class="exp-date">
+              <div class="cs" id="donation3-month-select" data-has-value="false">
+                <button class="cs__btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cs__text" data-placeholder="Month">Month</span>
+                  <span class="cs__icon" aria-hidden="true">
+                    <svg class="cs__chev" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </button>
+
+                <div class="cs__panel" role="listbox" tabindex="-1">
+                  <div class="cs__panel-inner">
+                    <ul class="cs__list" id="donation3-month-list"></ul>
+                  </div>
+                </div>
+
+                <input id="donation3-month-value" type="hidden" value="">
+              </div>
+
+              <div class="cs" id="donation3-year-select" data-has-value="false">
+                <button class="cs__btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="cs__text" data-placeholder="Year">Year</span>
+                  <span class="cs__icon" aria-hidden="true">
+                    <svg class="cs__chev" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 9l6 6 6-6"></path>
+                    </svg>
+                  </span>
+                </button>
+
+                <div class="cs__panel" role="listbox" tabindex="-1">
+                  <div class="cs__panel-inner">
+                    <ul class="cs__list" id="donation3-year-list"></ul>
+                  </div>
+                </div>
+
+                <input id="donation3-year-value" type="hidden" value="">
+              </div>
+            </div>
+          </div> -->
+
+          <div class="form-field margin">
+            <label class="body--text" for="donation3-exp-month">
+              <span class="required">*</span> Expiration Date
+            </label>
+
+            <div class="exp-date">
+              <input
+                id="donation3-exp-month"
+                class="body--text"
+                type="text"
+                inputmode="numeric"
+                placeholder="MM"
+                maxlength="2"
+                autocomplete="cc-exp-month"
+              >
+
+              <span class="exp-date__separator">/</span>
+
+              <input
+                id="donation3-exp-year"
+                class="body--text"
+                type="text"
+                inputmode="numeric"
+                placeholder="YY"
+                maxlength="2"
+                autocomplete="cc-exp-year"
+              >
+            </div>
+          </div>
+
+          <div class="form-field" id="donation3-save-card-field" hidden style="margin-top: 40px;">
+            <label class="cb" for="donation3-save-card">
+              <input class="cb__input" id="donation3-save-card" type="checkbox">
+              <span class="cb__box" aria-hidden="true"></span>
+              <span class="cb__text">Save card info for future donations</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__footer">
+        <div class="btn-nav">
+          <div class="btn-prev">
+            <a class="btn btn--ghost btn--text" href="#" data-next-modal="donation2-modal" data-close-parent-modal>back</a>
+          </div>
+
+          <div class="btn-next">
+            <a
+              id="donation3-complete"
+              class="btn btn--accent btn--text link-arrow"
+              href="javascript:void(0)"
+              data-close-modal>
+              Complete donation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="modal donation-modal" id="donation3-modal" data-modal hidden>
     <div class="modal__overlay" data-close-modal></div>
     <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="donate-title3">
       
@@ -1215,9 +1397,42 @@ You will receive emails from the Online Zoo, including updates and news on the l
         </div>
       </div>
     </div>
+  </div> -->
+
+  <div class="modal donation-result-modal" id="donation-result-modal" data-modal hidden>
+    <div class="modal__overlay" data-close-modal></div>
+
+    <div
+      class="modal__content donation-result-modal__content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="donation-result-title"
+    >
+      <button
+        class="modal__close"
+        type="button"
+        data-close-modal
+        aria-label="Close notification"
+      ></button>
+
+      <div class="donation-result-modal__icon" id="donation-result-icon" aria-hidden="true"></div>
+
+      <h3 class="donation-result-modal__title" id="donation-result-title"></h3>
+
+      <p class="body--text donation-result-modal__message" id="donation-result-message"></p>
+
+      <button
+        class="btn btn--accent btn--text donation-result-modal__button"
+        type="button"
+        data-close-modal
+      >
+        ok
+      </button>
+    </div>
   </div>
 
   <script type="module" src="./js/main.ts"></script>
+  <script type="module" src="./js/donation-modal.ts"></script>
   <script type="module" src="./js/auth.ts"></script>
 </body>
 </html>

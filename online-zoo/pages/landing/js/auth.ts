@@ -1,4 +1,5 @@
-import { AuthStorage } from "../../../src/shared/app/services/auth-storage";
+import type { IAuthStorage } from "../../../src/shared/app/services/auth-storage";
+import { createAuthStorage } from "../../../src/shared/app/services/auth-storage";
 import type { IUser } from "../../../src/shared/auth/auth.types";
 
 interface IHeaderElements {
@@ -76,7 +77,7 @@ function closeDropdown(elements: IHeaderElements): void {
   elements.userButton.setAttribute('aria-expanded', 'false');
 }
 
-function renderHeaderUser(elements: IHeaderElements, authStorage: AuthStorage): void {
+function renderHeaderUser(elements: IHeaderElements, authStorage: IAuthStorage): void {
   if (authStorage.isAuthenticated) {
     const user: IUser | null = authStorage.getUser();
     if (user) {
@@ -113,7 +114,7 @@ function initHeaderUserMenu(): void {
     return;
   }
 
-  const authStorage: AuthStorage = new AuthStorage();
+  const authStorage: IAuthStorage = createAuthStorage();
 
   renderHeaderUser(elements, authStorage);
 

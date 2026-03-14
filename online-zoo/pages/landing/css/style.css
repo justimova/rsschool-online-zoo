@@ -1202,3 +1202,92 @@ input.w200 {
 }
 
 /* END header functionality - copy */
+
+#donation-next-button:disabled,
+.is-disabled,
+#donation3-complete:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.other-amount:disabled,
+.other-amount:disabled:hover {
+  background-color: rgb(241, 239, 239) !important;
+  border-color: darkgray !important;
+  box-shadow: none !important;
+  cursor: not-allowed !important;
+  color: darkgray !important;
+}
+
+
+
+.donation-result-modal__content {
+  width: min(420px, calc(100% - 32px));
+  min-height: auto;
+  padding: 32px 24px 24px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.donation-result-modal__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.donation-result-modal--success .donation-result-modal__icon {
+  background: rgba(76, 175, 80, 0.14);
+}
+
+.donation-result-modal--error .donation-result-modal__icon {
+  background: rgba(244, 67, 54, 0.14);
+}
+
+.donation-result-modal--success .donation-result-modal__icon::before {
+  content: '✓';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.donation-result-modal--error .donation-result-modal__icon::before {
+  content: '!';
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #c62828;
+}
+
+.donation-result-modal__title {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.donation-result-modal__message {
+  margin: 0 0 24px;
+}
+
+.donation-result-modal__button {
+  min-width: 140px;
+}
+
+.is-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+[hidden] {
+  display: none !important;
+}

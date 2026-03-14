@@ -65,3 +65,7 @@ export class AuthStorage implements IAuthStorage {
     );
   }
 }
+
+export function createAuthStorage(): IAuthStorage {
+  return new AuthStorage();
+}
