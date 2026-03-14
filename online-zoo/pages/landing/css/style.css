@@ -414,7 +414,316 @@
 /* TESTIMONIALS SECTION */
 
 .testimonials {
-  /* padding: 0 var(--padding-horizontal); */
+  padding-top: 100px;
+  padding-bottom: 150px;
+  background-color: var(--navy);
+  color: var(--white);
+  background-image: url("../../../assets/images/bg_testimonials.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.testimonials .container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  width: 1400px;
+}
+
+.testimonials .section--head {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 0 0 320px;
+}
+
+.testimonials .section--head h2 {
+  max-width: 320px;
+  color: var(--white);
+}
+
+.testimonials .section--content {
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonials .testimonials-viewport {
+  width: 1040px;
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonials .testimonials-state {
+  min-height: 956px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonials .testimonials-track {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: max-content;
+  will-change: transform;
+}
+
+.testimonials .testimonials-column {
+  width: 505px;
+  flex: 0 0 505px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.testimonials .review-card {
+  border-radius: 5px;
+  padding: 30px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 505px;
+  min-height: 463px;
+  color: var(--black);
+  background: var(--white);
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.testimonials .review-icon {
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 1;
+  letter-spacing: 1%;
+  text-transform: uppercase;
+  color: var(--turquoise);
+  max-height: 96px;
+  height: 96px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.testimonials .review-card .body--text {
+  min-height: 162px;
+  margin: 0;
+}
+
+.testimonials .review-card .btn--text {
+  color: var(--black);
+  margin-top: 0;
+}
+
+.testimonials .review-card .subheader {
+  margin-top: -30px;
+  color: var(--black);
+}
+
+.testimonials .arrow--panel {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+  margin: 60px auto 0;
+  width: 1400px;
+  justify-content: flex-end;
+}
+
+.testimonials .action--panel {
+  display: flex;
+  flex-direction: row;
+  margin-top: var(--testimonials-action--panel-margin-top);
+  color: var(--white);
+  justify-content: center;
+}
+
+.testimonials .testimonials-state[hidden],
+.testimonials .testimonials-track[hidden],
+.testimonials .testimonials-loader[hidden],
+.testimonials .testimonials-error[hidden] {
+  display: none;
+}
+
+.testimonials .testimonials-loader {
+  width: 64px;
+  height: 64px;
+  border: 6px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: testimonials-spin 0.8s linear infinite;
+}
+
+.testimonials .testimonials-error {
+  max-width: 420px;
+  margin: 0;
+  text-align: center;
+  color: var(--white);
+}
+
+.testimonials .btn__arrow:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+@keyframes testimonials-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .testimonials .container {
+    width: 1120px;
+    gap: 20px;
+  }
+
+  .testimonials .section--head {
+    width: 280px;
+    flex-basis: 280px;
+  }
+
+  .testimonials .testimonials-viewport {
+    width: 820px;
+  }
+
+  .testimonials .testimonials-column {
+    width: 395px;
+    flex-basis: 395px;
+  }
+
+  .testimonials .review-card {
+    width: 395px;
+    min-height: 430px;
+    padding: 24px 28px 20px;
+  }
+
+  .testimonials .arrow--panel {
+    width: 1120px;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1199px) {
+  .testimonials {
+    padding-top: 80px;
+    padding-bottom: 110px;
+  }
+
+  .testimonials .container {
+    width: 600px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .testimonials .section--head {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .testimonials .testimonials-viewport {
+    width: 600px;
+  }
+
+  .testimonials .testimonials-state {
+    min-height: 360px;
+  }
+
+  .testimonials .testimonials-column {
+    width: 420px;
+    flex-basis: 420px;
+    gap: 0;
+  }
+
+  .testimonials .review-card {
+    width: 420px;
+    min-height: 340px;
+    padding: 24px 24px 20px;
+    gap: 20px;
+  }
+
+  .testimonials .review-icon {
+    font-size: 90px;
+    height: 72px;
+    max-height: 72px;
+  }
+
+  .testimonials .review-card .subheader {
+    margin-top: -20px;
+  }
+
+  .testimonials .review-card .body--text {
+    min-height: auto;
+  }
+
+  .testimonials .arrow--panel {
+    width: 600px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 639px) {
+  .testimonials {
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+
+  .testimonials .container {
+    width: 300px;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .testimonials .section--head {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .testimonials .testimonials-viewport {
+    width: 300px;
+  }
+
+  .testimonials .testimonials-state {
+    min-height: 480px;
+  }
+
+  .testimonials .testimonials-column {
+    width: 300px;
+    flex-basis: 300px;
+    gap: 0;
+  }
+
+  .testimonials .review-card {
+    width: 300px;
+    min-height: 480px;
+    padding: 24px 20px 20px;
+    gap: 18px;
+  }
+
+  .testimonials .review-icon {
+    font-size: 80px;
+    height: 64px;
+    max-height: 64px;
+  }
+
+  .testimonials .review-card .subheader {
+    margin-top: -16px;
+  }
+
+  .testimonials .review-card .body--text {
+    min-height: auto;
+  }
+
+  .testimonials .arrow--panel {
+    width: 300px;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+/* .testimonials {
   padding-top: 100px;
   padding-bottom: 150px;
   background-color: var(--navy);
@@ -520,7 +829,7 @@
   flex-direction: row;
   margin-top: var(--testimonials-action--panel-margin-top);
   color: var(--white);
-}
+} */
 
 /* End TESTIMONIALS SECTION */
 
