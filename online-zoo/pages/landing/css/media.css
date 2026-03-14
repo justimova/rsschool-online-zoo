@@ -179,7 +179,7 @@
     text-align: center;
   }
 
-  .meet-pets {
+  /* .meet-pets {
     align-items: center;
     text-align: center;
   }
@@ -192,7 +192,7 @@
 
   .meet-pets .card {
     width: 290px;
-  }
+  } */
 
   .pay-feed .card .card--content {
     flex-direction: column;
@@ -292,9 +292,9 @@
     display: none;
   }
 
-  .meet-pets .card {
+  /* .meet-pets .card {
     width: 300px;
-  }
+  } */
 
   .testimonials .review-card {
     width: 300px;

@@ -112,44 +112,61 @@
   font-weight: 500;
 }
 
-.meet-pets .pets-carousel {
-  margin-top: var(--gap);
-}
-
-.meet-pets .pets-carousel-content {
-  overflow: hidden;
-  width: var(--pets-carousel-content-width);
-  display: flex;
-  flex-direction: column;
-  gap: var(--carousel-gap);
-}
-
-.meet-pets .pets-carousel-row {
+.meet-pets .arrow--panel {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: var(--carousel-gap);
-  flex-wrap: nowrap;
-  white-space: nowrap;
-}
-
-.meet-pets .action--panel {
-  display: flex;
-  flex-direction: row;
+  gap: 55px;
   align-items: center;
   justify-content: center;
-  margin-top: var(--meet-pets-action-margin-top);
+  margin-top: 100px;
+}
+
+.meet-pets .pets-carousel {
+  margin-top: var(--gap);
+  display: flex;
+  justify-content: center;
+}
+
+.meet-pets .pets-carousel-viewport {
+  width: 1400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.meet-pets .pets-carousel-state {
+  min-height: 748px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meet-pets .pets-carousel-track {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: max-content;
+  will-change: transform;
+}
+
+.meet-pets .pets-carousel-column {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex: 0 0 440px;
 }
 
 .meet-pets .card {
-  flex: 0 0 auto;
-  width: var(--card-width);
+  display: block;
+  width: 440px;
   height: 748px;
-  border-radius: var(--radius);
+  border-radius: 5px;
   overflow: hidden;
   background: var(--navy);
   padding: 0;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .meet-pets .card--media {
@@ -179,7 +196,6 @@
   padding: 30px 30px 47px;
   text-align: center;
   background: var(--navy);
-  text-wrap-mode: wrap;
 }
 
 .meet-pets .card--title {
@@ -194,14 +210,120 @@
   min-height: 78px;
 }
 
-.meet-pets .arrow--panel {
+.meet-pets .card .btn {
+  pointer-events: none;
+}
+
+.meet-pets .card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* 1200 - 1919 */
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .meet-pets .pets-carousel-viewport {
+    width: 1120px;
+  }
+
+  .meet-pets .pets-carousel-track {
+    gap: 40px;
+  }
+
+  .meet-pets .pets-carousel-column {
+    width: 540px;
+    flex-basis: 540px;
+  }
+
+  .meet-pets .card {
+    width: 540px;
+  }
+}
+
+/* 640 - 1199 */
+@media (min-width: 640px) and (max-width: 1199px) {
+  .meet-pets .pets-carousel-viewport {
+    width: 600px;
+  }
+
+  .meet-pets .pets-carousel-state {
+    min-height: 748px;
+  }
+
+  .meet-pets .pets-carousel-track {
+    gap: 20px;
+  }
+
+  .meet-pets .pets-carousel-column {
+    width: 290px;
+    flex-basis: 290px;
+    gap: 0;
+  }
+
+  .meet-pets .card {
+    width: 290px;
+    height: 640px;
+  }
+
+  .meet-pets .card--media {
+    height: 360px;
+  }
+
+  .meet-pets .arrow--panel {
+    margin-top: 70px;
+  }
+}
+
+/* <= 639 */
+@media (max-width: 639px) {
+  .meet-pets .pets-carousel-viewport {
+    width: 300px;
+  }
+
+  .meet-pets .pets-carousel-state {
+    min-height: 620px;
+  }
+
+  .meet-pets .pets-carousel-track {
+    gap: 20px;
+  }
+
+  .meet-pets .pets-carousel-column {
+    width: 300px;
+    flex-basis: 300px;
+    gap: 0;
+  }
+
+  .meet-pets .card {
+    width: 300px;
+    height: 620px;
+  }
+
+  .meet-pets .card--media {
+    height: 320px;
+  }
+
+  .meet-pets .card--panel {
+    padding: 24px 20px 32px;
+  }
+
+  .meet-pets .card--text {
+    min-height: auto;
+  }
+
+  .meet-pets .arrow--panel {
+    gap: 24px;
+    margin-top: 50px;
+  }
+}
+
+.meet-pets .action--panel {
   display: flex;
   flex-direction: row;
-  gap: 55px;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: var(--meet-pets-action-margin-top);
 }
+
 
 /* End MEET THE PETS SECTION */
 
@@ -1291,3 +1413,36 @@ input.w200 {
 [hidden] {
   display: none !important;
 }
+
+/* SPEENER */
+
+.meet-pets .pets-carousel-state[hidden],
+.meet-pets .pets-carousel-track[hidden],
+.meet-pets .pets-carousel-loader[hidden],
+.meet-pets .pets-carousel-error[hidden] {
+  display: none;
+}
+
+.meet-pets .pets-carousel-loader {
+  width: 64px;
+  height: 64px;
+  border: 6px solid rgba(8, 45, 66, 0.15);
+  border-top-color: var(--navy);
+  border-radius: 50%;
+  animation: meet-pets-spin 0.8s linear infinite;
+}
+
+.meet-pets .pets-carousel-error {
+  max-width: 420px;
+  margin: 0;
+  text-align: center;
+  color: var(--navy);
+}
+
+@keyframes meet-pets-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* End SPEENER */
