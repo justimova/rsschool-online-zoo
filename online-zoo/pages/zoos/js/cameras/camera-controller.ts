@@ -4,7 +4,7 @@ import { getAnimalIconByText } from "./animal-icons";
 
 const HEADER_HEIGHT = 110;
 const VISIBLE_CAMERAS_COUNT = 4;
-const IMAGE_BASE_PATH = "../../assets/images";
+// const IMAGE_BASE_PATH = "../../assets/images";
 const CAMERA_LINK = "https://www.youtube.com/watch?v=OevbuYwXDw4";
 const THUMBNAILS_COUNT = 3;
 const DEFAULT_ERROR_MESSAGE = "Something went wrong. Please, refresh the page";
@@ -147,7 +147,7 @@ export class CameraController {
 
   private renderCurrentCamera(petId: number): void {
     this.elements.currentLink.href = CAMERA_LINK;
-    this.elements.currentImage.src = `${IMAGE_BASE_PATH}/cams_${petId}.png`;
+    this.elements.currentImage.src = this.getImage(`cams_${petId}.png`); // `${IMAGE_BASE_PATH}/cams_${petId}.png`;
     this.elements.currentImage.alt = "Watch video";
     this.elements.currentLabel.textContent = "";
   }

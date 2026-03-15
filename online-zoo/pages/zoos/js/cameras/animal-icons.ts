@@ -1,4 +1,4 @@
-const ANIMAL_ICON_BASE_PATH = "../../../assets/icons/animals";
+// const ANIMAL_ICON_BASE_PATH = "../../../assets/icons/animals";
 
 type AnimalIconFileName =
   | "panda"
@@ -129,7 +129,6 @@ function normalizeText(value: string): string {
 
 function createIconPath(fileName: AnimalIconFileName): string {
   const img = new URL(`${import.meta.env.BASE_URL}assets/icons/animals/${fileName}.svg`, import.meta.url).href;
-  console.log(img);
   return img; // `${ANIMAL_ICON_BASE_PATH}/${fileName}.svg`;
 }
 

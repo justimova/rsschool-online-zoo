@@ -10,13 +10,13 @@ interface PetCardRendererOptions {
 export class PetCardRenderer implements IPetCardRenderer {
   private readonly zooPagePath: string;
 
-  private readonly imageBasePath: string;
+  // private readonly imageBasePath: string;
 
   private readonly imageExtension: string;
 
   public constructor(options: PetCardRendererOptions = {}) {
     this.zooPagePath = options.zooPagePath ?? "../zoos/index.html";
-    this.imageBasePath = options.imageBasePath ?? "../../assets/images/animals_card";
+    // this.imageBasePath = options.imageBasePath ?? "../../assets/images/animals_card";
     this.imageExtension = options.imageExtension ?? ".png";
   }
 
