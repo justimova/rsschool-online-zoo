@@ -1,10 +1,21 @@
-const panel = document.querySelector('.side-panel');
+// const panel = document.querySelector('.side-panel');
 
-window.addEventListener('scroll', () => {
-  panel?.classList.toggle('is-scrolled', window.scrollY > 120);
-}, { passive: true });
+import { CameraController, getCameraControllerElements } from "./cameras/camera-controller";
 
+// window.addEventListener('scroll', () => {
+//   panel?.classList.toggle('is-scrolled', window.scrollY > 120);
+// }, { passive: true });
 
+document.addEventListener("DOMContentLoaded", async () => {
+  const elements = getCameraControllerElements();
+
+  if (!elements) {
+    return;
+  }
+
+  const cameraController = new CameraController(elements);
+  await cameraController.init();
+});
 
 document?.querySelector('.track')?.addEventListener('click', (e) => {
   const li = (e.target as Element)?.closest('li.item');
