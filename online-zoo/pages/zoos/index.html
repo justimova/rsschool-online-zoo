@@ -51,7 +51,7 @@
     </div>
   </header>
 
-  <aside class="side-panel is-collapsed" id="camera-side-panel" aria-label="Camera panel">
+  <aside class="side-panel is-collapsed" id="camera-side-panel" aria-label="Camera panel" hidden>
     <div class="side-panel__top">
       <div class="side-panel__live" id="camera-side-panel-live">
         <span class="btn--text">LIVE</span>
@@ -225,7 +225,25 @@
 
   <main>
     <h1>Online Zoo</h1>
-    <section class="section cams" style="overflow-x: hidden;">
+
+    <section class="section cams-page-state" id="cams-page-state" style="overflow-x: hidden;">
+      <div class="cams-page-state__inner">
+        <div class="cams--header">
+          <h2>Live cams</h2>
+        </div>
+
+        <div class="cams-page-state__content">
+          <div class="zoo-state">
+            <div class="zoo-loader" id="cams-page-loader"></div>
+            <p class="subheader zoo-error" id="cams-page-error" hidden>
+              Something went wrong. Please, refresh the page
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cams" id="cams-section" style="overflow-x: hidden;" hidden>
       <div class="cams--inner">
 
         <div class="cams--header">
@@ -233,53 +251,87 @@
         </div>
 
         <div class="cams-current">
-          <a href="https://www.youtube.com/watch?v=OevbuYwXDw4" target="_blank" rel="noopener">
-            <img class="cams--img" src="../../assets/images/cams-panda.svg" alt="Watch video">
+          <a
+            class="cams-current__link"
+            id="cams-current-link"
+            href="https://www.youtube.com/watch?v=OevbuYwXDw4"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="cams-current__label" id="cams-current-label"></span>
+            <img class="cams--img" id="cams-current-image" src="../../assets/images/cams_1.png" alt="Watch video">
+            <span class="cams-current__play" aria-hidden="true"></span>
+
+            <span class="cams-current__logo" aria-hidden="true">
+              <img src="../../assets/images/logo_white.png" alt="">
+            </span>
+
+            <span class="cams-current__controls" aria-hidden="true">
+              <span class="cams-current__controls-left">
+                <span class="cams-current__controls-icon">
+                  <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1.5L12.5 8L1 14.5V1.5Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="cams-current__controls-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="1" width="4" height="14" fill="currentColor"/>
+                    <rect x="10" y="1" width="4" height="14" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="cams-current__controls-icon">
+                  <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6H5L10 2V14L5 10H1V6Z" fill="currentColor"/>
+                    <path d="M13 5C14.3333 6 14.3333 10 13 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                    <path d="M15.5 3C17.8333 5 17.8333 11 15.5 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span class="cams-current__controls-live">
+                  <span class="cams-current__controls-live-dot"></span>
+                  LIVE
+                </span>
+              </span>
+
+              <span class="cams-current__controls-right">
+                <span class="cams-current__controls-icon cams-current__controls-icon--boxed">CC</span>
+                <span class="cams-current__controls-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 1L11.1 3.3L14.2 2.8L14.7 5.9L17 8L14.7 10.1L15.2 13.2L12.1 13.7L10 16L7.9 13.7L4.8 14.2L4.3 11.1L2 9L4.3 6.9L3.8 3.8L6.9 3.3L9 1Z" stroke="currentColor" stroke-width="1.4"/>
+                    <circle cx="9" cy="9" r="2.4" stroke="currentColor" stroke-width="1.4"/>
+                  </svg>
+                </span>
+                <span class="cams-current__controls-icon">
+                  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="1" width="16" height="14" stroke="currentColor" stroke-width="1.6"/>
+                    <path d="M17 5L21 3V13L17 11V5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="cams-current__controls-icon">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 6V1H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 6V1H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M1 12V17H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 12V17H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </span>
+            </span>
           </a>
         </div>
-
 
         <div class="cams--carousel">
           <h3>More live views</h3>
 
           <div class="cams--carousel--inner">
-            <button class="btn__arrow-noborder" type="button" aria-label="Prev">
-              <svg width="80" height="74" viewBox="0 0 80 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M38.9313 26.12C39.1134 26.1992 39.2789 26.3153 39.4182 26.4616C39.5578 26.6075 39.6686 26.7809 39.7442 26.9717C39.8197 27.1626 39.8586 27.3672 39.8586 27.5739C39.8586 27.7805 39.8197 27.9852 39.7442 28.176C39.6686 28.3669 39.5578 28.5403 39.4182 28.6862L33.3905 35H50.5411C50.9655 35 51.3724 35.2107 51.6725 35.5858C51.9725 35.9609 52.1411 36.4696 52.1411 37C52.1411 37.5304 51.9725 38.0391 51.6725 38.4142C51.3724 38.7893 50.9655 39 50.5411 39H33.3897L39.4182 45.3146C39.6997 45.6096 39.8579 46.0097 39.8579 46.4269C39.8579 46.8441 39.6997 47.2443 39.4182 47.5393C39.1366 47.8343 38.7548 48 38.3566 48C37.9585 48 37.5766 47.8343 37.2951 47.5393L28.2991 38.1127C28.1595 37.9668 28.0487 37.7934 27.9731 37.6026C27.8976 37.4117 27.8586 37.2071 27.8586 37.0004C27.8586 36.7938 27.8976 36.5891 27.9731 36.3983C28.0487 36.2074 28.1595 36.034 28.2991 35.8881L37.2951 26.4616C37.4344 26.3153 37.5998 26.1992 37.782 26.12C37.9641 26.0408 38.1594 26 38.3566 26C38.5539 26 38.7491 26.0408 38.9313 26.12Z"
-                  fill="currentColor"/>
-              </svg>
-            </button>
-
             <div class="viewport">
-              <ul class="track">
-                <li class="item active" data-title="CAM 1" data-icon="user" data-url="https://www.youtube.com/watch?v=OevbuYwXDw4">
-                  <img src="../../assets/images/cams-panda-min1.svg" alt="CAM 1">
-                </li>
-
-                <li class="item" data-title="CAM 2" data-icon="user" data-url="https://www.youtube.com/watch?v=OevbuYwXDw4">
-                  <img src="../../assets/images/cams-panda-min2.svg" alt="CAM 2">
-                </li>
-
-                <li class="item" data-title="CAM 3" data-icon="user" data-url="https://www.youtube.com/watch?v=OevbuYwXDw4">
-                  <img src="../../assets/images/cams-panda-min3.svg" alt="CAM 3">
-                </li>
-              </ul>
+              <ul class="track" id="cams-track"></ul>
             </div>
-
-            <button class="btn__arrow-noborder" type="button" aria-label="Next">
-              <svg width="80" height="74" viewBox="0 0 80 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M41.0687 26.12C40.8866 26.1992 40.7211 26.3153 40.5818 26.4616C40.4422 26.6075 40.3314 26.7809 40.2558 26.9717C40.1803 27.1626 40.1414 27.3672 40.1414 27.5739C40.1414 27.7805 40.1803 27.9852 40.2558 28.176C40.3314 28.3669 40.4422 28.5403 40.5818 28.6862L46.6095 35H29.4589C29.0345 35 28.6276 35.2107 28.3275 35.5858C28.0275 35.9609 27.8589 36.4696 27.8589 37C27.8589 37.5304 28.0275 38.0391 28.3275 38.4142C28.6276 38.7893 29.0345 39 29.4589 39H46.6103L40.5818 45.3146C40.3003 45.6096 40.1421 46.0097 40.1421 46.4269C40.1421 46.8441 40.3003 47.2443 40.5818 47.5393C40.8634 47.8343 41.2452 48 41.6434 48C42.0415 48 42.4234 47.8343 42.7049 47.5393L51.7009 38.1127C51.8405 37.9668 51.9513 37.7934 52.0269 37.6026C52.1024 37.4117 52.1414 37.2071 52.1414 37.0004C52.1414 36.7938 52.1024 36.5891 52.0269 36.3983C51.9513 36.2074 51.8405 36.034 51.7009 35.8881L42.7049 26.4616C42.5656 26.3153 42.4002 26.1992 42.218 26.12C42.0359 26.0408 41.8406 26 41.6434 26C41.4461 26 41.2509 26.0408 41.0687 26.12Z"
-                  fill="currentColor"/>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section donation" style="overflow-x: hidden;">
+    <section class="section donation" id="donation-section" style="overflow-x: hidden;" hidden>
       <div class="donation--inner">
         <div class="container">
           <h3>
@@ -310,72 +362,64 @@
       </div>
     </section>
 
-    <section class="section you-know" style="overflow-x: hidden;">
+    <section class="section you-know" id="you-know-section" style="overflow-x: hidden;" hidden>
       <div class="you-know--inner">
-        <div class="card you-know--card">
-          <h3>Did you know?</h3>
-          <div class="subheader">
-            Pandas are often seen eating in a relaxed sitting posture, 
-            with their hind legs stretched out before them. 
-            They may appear sedentary, but they are skilled 
-            tree-climbers and efficient swimmers.
+        <div class="you-know__state" id="you-know-state">
+          <div class="zoo-state">
+            <div class="zoo-loader" id="you-know-loader"></div>
+            <p class="subheader zoo-error" id="you-know-error" hidden>
+              Something went wrong. Please, refresh the page
+            </p>
           </div>
         </div>
 
-        <div class="you-know--info">
-          <div class="you-know--info--short">
-            <div class="you-know--info--params">
-              <div class="params--row">
-                <span class="subheader">Common name:</span>
-                <span class="body--text">Giant Panda</span>
+        <div class="you-know__content" id="you-know-content" hidden>
+          <div class="card you-know--card">
+            <h3>Did you know?</h3>
+            <div class="subheader" id="animal-description"></div>
+          </div>
+
+          <div class="you-know--info">
+            <div class="you-know--info--short">
+              <div class="you-know--info--params">
+                <div class="params--row">
+                  <span class="subheader">Common name:</span>
+                  <span class="body--text" id="animal-common-name"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Scientific name:</span>
+                  <span class="body--text" id="animal-scientific-name"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Type:</span>
+                  <span class="body--text" id="animal-type"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Size:</span>
+                  <span class="body--text" id="animal-size"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Diet:</span>
+                  <span class="body--text" id="animal-diet"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Habitat:</span>
+                  <span class="body--text" id="animal-habitat"></span>
+                </div>
+                <div class="params--row">
+                  <span class="subheader">Range:</span>
+                  <span class="body--text" id="animal-range"></span>
+                </div>
               </div>
-              <div class="params--row">
-                <span class="subheader">Scientific name:</span>
-                <span class="body--text">Ailuropoda melanoleuca</span>
-              </div>
-              <div class="params--row">
-                <span class="subheader">Type:</span>
-                <span class="body--text">Herbivore</span>
-              </div>
-              <div class="params--row">
-                <span class="subheader">Size:</span>
-                <span class="body--text">4 to 5 feet</span>
-              </div>
-              <div class="params--row">
-                <span class="subheader">Diet:</span>
-                <span class="body--text">Omnivore</span>
-              </div>
-              <div class="params--row">
-                <span class="subheader">Habitat:</span>
-                <span class="body--text">Forests</span>
-              </div>
-              <div class="params--row">
-                <span class="subheader">Range:</span>
-                <span class="body--text">Eastern Asia</span>
+
+              <div class="you-know--info--img">
+                <img id="animal-image" src="../../assets/images/you_know1.png" alt="animal">
               </div>
             </div>
 
-            <div class="you-know--info--img">
-              <img src="../../assets/images/you_know1.png" alt="animal">
-            </div>
-
+            <div class="body--text you-know--info--details" id="animal-details"></div>
           </div>
-          
-          <div class="body--text you-know--info--details">
-            Giant pandas are very unusual animals that eat almost exclusively bamboo, which is very low in nutrients. 
-            Because of this, they have many unique adaptations for their low-energy lifestyle. 
-            Giant pandas are solitary. They have a highly developed sense of smell that 
-            males use to avoid each other and to find females for mating in the spring. 
-            After a five-month pregnancy, females give birth to a cub or two, though they cannot care for both twins. 
-            The blind infants weigh only 5 ounces at birth and cannot crawl until they reach three months of age. 
-            They are born white, and develop their much loved coloring later. 
-            Habitat loss is the primary threat to this species. 
-            Its popularity around the world has helped the giant panda 
-            become the focus of successful conservation programs.
-          </div>
-
         </div>
-
       </div>
     </section>
   </main>

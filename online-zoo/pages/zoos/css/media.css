@@ -1,10 +1,16 @@
-@media (min-width: 1200px) and (max-width: 1919px) {
+﻿@media (min-width: 1200px) and (max-width: 1919px) {
   .header {
     padding-left: 40px;
     padding-right: 40px;
   }
 
   /* CAMS SECTION */
+  .cams-page-state__inner {
+    width: calc(100% - 80px);
+    padding-top: 30px;
+    padding-bottom: 100px;
+  }
+
   .cams--inner {
     width: 100%;
     padding-top: 30px;
@@ -14,7 +20,6 @@
   .cams--img {
     width: 100%;
     min-width: 1025px;
-    padding-left: 135px;
   }
 
   .cams h2 {
@@ -22,7 +27,17 @@
   }
 
   .cams-current {
+    --cams-current-offset: 135px;
     margin-bottom: 10px;
+  }
+
+  .cams-current__label {
+    font-size: 28px;
+  }
+
+  .cams-current__play {
+    width: 84px;
+    height: 84px;
   }
 
   .cams--carousel--inner {
@@ -40,10 +55,6 @@
     /* height: 209px; */
   }
 
-  .cams--carousel--inner .btn__arrow-noborder {
-    width: 40px;
-    height: 40px;
-  }
 
   .track {
     gap: 20px;
@@ -93,6 +104,12 @@
   }
 
   /* CAMS SECTION */
+  .cams-page-state__inner {
+    width: 600px;
+    padding-top: 17px;
+    padding-bottom: 80px;
+  }
+
   .cams--inner {
     width: 100%;
     padding-top: 17px;
@@ -101,7 +118,6 @@
   
   .cams--img {
     width: 100%;
-    padding-left: 78px;
     min-width: 542px;
   }
   
@@ -110,25 +126,56 @@
   }
 
   .cams-current {
+    --cams-current-offset: 78px;
     margin-bottom: 88px;
+  }
+
+  .cams-current__label {
+    top: 16px;
+    left: 16px;
+    font-size: 24px;
+  }
+
+  .cams-current__play {
+    width: 72px;
+    height: 72px;
+  }
+
+  .cams-current__controls {
+    min-height: 48px;
+    padding: 10px 14px;
+  }
+
+  .cams-current__controls-live {
+    font-size: 16px;
+  }
+
+  .cams-current__logo {
+    bottom: 62px;
+    right: 14px;
+    width: 88px;
   }
 
   .cams--carousel--inner {
     width: 451px;
   }
 
-  .cams--carousel--inner .btn__arrow-noborder {
-    display: none;
-  }
-
   .item {
     width: 141px;
-    /* height: 112px; */
   }
 
   .item img {
-    width: 135px;
-    /* height: 106px; */
+    width: 100%;
+  }
+
+  .item__label {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .item__play {
+    width: 34px;
+    height: 34px;
   }
   
   .track {
@@ -157,6 +204,10 @@
   .you-know--inner {
     width: 600px;
     padding: 80px 0 100px;
+  }
+
+  .you-know__state {
+    min-height: 240px;
   }
 
   .you-know--card {
@@ -211,6 +262,12 @@
   }
 
   /* CAMS SECTION */
+  .cams-page-state__inner {
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
   .cams--inner {
     width: 100%;
     padding-top: 20px;
@@ -220,7 +277,6 @@
   .cams--img {
     min-width: 270px;
     width: 100%;
-    padding-left: 50px;
   }
 
   .cams h2 {
@@ -237,24 +293,73 @@
   }
 
   .cams-current {
+    --cams-current-offset: 50px;
     margin-bottom: 20px;
+  }
+
+  .cams-current__label {
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+  }
+
+  .cams-current__play {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cams-current__controls {
+    min-height: 42px;
+    gap: 10px;
+    padding: 8px 10px;
+  }
+
+  .cams-current__controls-left,
+  .cams-current__controls-right {
+    gap: 8px;
+  }
+
+  .cams-current__controls-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cams-current__controls-live {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .cams-current__controls-live-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .cams-current__logo {
+    bottom: 52px;
+    right: 10px;
+    width: 72px;
   }
 
   .cams--carousel--inner {
     width: 306px;
   }
 
-  .cams--carousel--inner .btn__arrow-noborder {
-    display: none;
-  }
-
   .item {
     width: 146px;
-    /* height: 116px; */
   }
 
   .item img {
-    width: 140px;
+    width: 100%;
+  }
+
+  .item__label {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  .item__play {
+    width: 32px;
+    height: 32px;
   }
   
   .track {
@@ -278,6 +383,10 @@
   .you-know--inner {
     width: 300px;
     padding: 50px 0 80px;
+  }
+
+  .you-know__state {
+    min-height: 200px;
   }
 
   .you-know--card {
