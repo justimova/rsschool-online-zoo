@@ -20,6 +20,10 @@ export class PetCardRenderer implements IPetCardRenderer {
     this.imageExtension = options.imageExtension ?? ".png";
   }
 
+  private getImagePath(name: string): string {
+    const img = new URL(`${import.meta.env.BASE_URL}assets/images/animals_card${name}`, import.meta.url).href;
+    return img; //`${import.meta.env.BASE_URL}assets/images/animals_card${name}`;
+  }
   public createCard(animal: IAnimal): HTMLAnchorElement {
     const card = document.createElement("a");
     card.className = "card";
@@ -32,7 +36,7 @@ export class PetCardRenderer implements IPetCardRenderer {
 
     const image = document.createElement("img");
     image.className = "card--img";
-    image.src = `${this.imageBasePath}${animal.id}${this.imageExtension}`;
+    image.src = this.getImagePath(`${animal.id}${this.imageExtension}`); // `${this.imageBasePath}${animal.id}${this.imageExtension}`;
     image.alt = animal.commonName;
     image.loading = "lazy";
 

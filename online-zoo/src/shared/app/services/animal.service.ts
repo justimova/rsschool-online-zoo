@@ -7,6 +7,7 @@ import type { IAnimalResponse, IAnimalsResponse, ICamerasResponse } from "../../
 export interface IAnimalService {
   getAnimals(): Promise<IAnimalsResponse>;
   getCameras(): Promise<ICamerasResponse>;
+  getAnimal(petId: number): Promise<IAnimalResponse>;
 }
 
 export class AnimalService implements IAnimalService {

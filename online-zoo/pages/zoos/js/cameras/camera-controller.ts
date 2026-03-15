@@ -176,7 +176,7 @@ export class CameraController {
     this.elements.animalHabitat.textContent = animal.habitat;
     this.elements.animalRange.textContent = animal.range;
     this.elements.animalDetails.textContent = animal.detailedDescription;
-    this.elements.animalImage.src = `${IMAGE_BASE_PATH}/you_know${animal.id}.png`;
+    this.elements.animalImage.src = this.getImage(`you_know${animal.id}.png`); // `${IMAGE_BASE_PATH}/you_know${animal.id}.png`;
     this.elements.animalImage.alt = animal.commonName;
   }
 
@@ -205,7 +205,7 @@ export class CameraController {
     play.setAttribute("aria-hidden", "true");
 
     const image = document.createElement("img");
-    image.src = `${IMAGE_BASE_PATH}/cams_${petId}_${cameraNumber}.png`;
+    image.src = this.getImage(`cams_${petId}_${cameraNumber}.png`); // `${IMAGE_BASE_PATH}/cams_${petId}_${cameraNumber}.png`;
     image.alt = `CAM ${cameraNumber}`;
 
     link.append(label, play, image);
@@ -214,6 +214,9 @@ export class CameraController {
     return listItem;
   }
 
+  private getImage(fileName: string): string {
+    return new URL(`${import.meta.env.BASE_URL}assets/images/${fileName}`, import.meta.url).href;
+  }
   private createCameraItem(camera: ICamera): HTMLLIElement {
     const cameraId = this.getCameraPetId(camera);
     const listItem = document.createElement("li");

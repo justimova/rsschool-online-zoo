@@ -128,7 +128,9 @@ function normalizeText(value: string): string {
 }
 
 function createIconPath(fileName: AnimalIconFileName): string {
-  return `${ANIMAL_ICON_BASE_PATH}/${fileName}.svg`;
+  const img = new URL(`${import.meta.env.BASE_URL}assets/icons/animals/${fileName}.svg`, import.meta.url).href;
+  console.log(img);
+  return img; // `${ANIMAL_ICON_BASE_PATH}/${fileName}.svg`;
 }
 
 export function getAnimalIconByText(text: string): string | null {
