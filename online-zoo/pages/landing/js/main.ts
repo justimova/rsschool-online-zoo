@@ -27,35 +27,6 @@ document.querySelectorAll('[data-slider]').forEach((button) => {
   });
 });
 
-// const feedbackModal = document.getElementById('feedback-modal');
-// const openModalBtn = document.querySelector('[data-open-modal="feedback"]');
-
-// if (openModalBtn && feedbackModal) {
-//   openModalBtn.addEventListener('click', () => {
-//     feedbackModal.hidden = false;
-//     document.body.style.overflow = 'hidden';
-//   });
-
-//   feedbackModal.querySelectorAll('[data-close-modal]').forEach((closeBtn) => {
-//     closeBtn.addEventListener('click', () => {
-//       feedbackModal.hidden = true;
-//       document.body.style.overflow = '';
-//     });
-//   });
-// }
-
-// document.querySelectorAll('form').forEach((form) => {
-//   form.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     form.reset();
-//     if (form.classList.contains('feedback-form') && feedbackModal) {
-//       feedbackModal.hidden = true;
-//       document.body.style.overflow = '';
-//     }
-//   });
-// });
-
-
 document.querySelectorAll('.meet-pets .card').forEach((card) => {
   card.addEventListener('click', (e) => {
     if ((e.target as Element)?.closest('a, button')) return;
@@ -82,34 +53,7 @@ document.querySelectorAll('.favourite .card').forEach((card) => {
   card.style.cursor = 'pointer';
 });
 
-
-
-// document.addEventListener('click', (e) => {
-//   const closeBtn = e.target.closest('[data-close-modal]');
-//   if (!closeBtn) return;
-
-//   const modal = closeBtn.closest('.modal');
-//   if (!modal) return;
-
-//   modal.hidden = true;
-
-//   document.body.classList.remove('no-scroll');
-// });
-
-// function openModal(id) {
-//   const modal = document.getElementById(id);
-//   if (!modal) return;
-//   modal.hidden = false;
-//   document.body.classList.add('no-scroll');
-// }
-
 const careModal = document.getElementById('care-modal');
-
-// function openCareModal(): void {
-//   if (!careModal) return;
-//   careModal.removeAttribute('hidden');
-//   document.body.style.overflow = 'hidden';
-// }
 
 function closeCareModal(): void {
   if (!careModal) return;
@@ -131,30 +75,7 @@ if (careModal) {
   });
 }
 
-// document.addEventListener('click', (e) => {
-//   const opener = e.target.closest('[data-open-modal]');
-//   if (!opener) return;
-
-//   e.preventDefault();
-
-//   const id = opener.getAttribute('data-open-modal');
-//   const modal = document.getElementById(id);
-//   if (!modal) return;
-
-//   modal.removeAttribute('hidden');
-//   document.body.style.overflow = 'hidden';
-// });
-
-
-
-
 const donationModal = document.getElementById('donation-modal');
-
-// function openDonationModal(): void {
-//   if (!donationModal) return;
-//   donationModal.removeAttribute('hidden');
-//   document.body.style.overflow = 'hidden';
-// }
 
 function closeDonationModal(): void {
   if (!donationModal) return;
@@ -178,12 +99,6 @@ if (donationModal) {
 
 const donation2Modal = document.getElementById('donation2-modal');
 
-// function openDonation2Modal(): void {
-//   if (!donation2Modal) return;
-//   donation2Modal.removeAttribute('hidden');
-//   document.body.style.overflow = 'hidden';
-// }
-
 function closeDonation2Modal(): void {
   if (!donation2Modal) return;
   donation2Modal.setAttribute('hidden', '');
@@ -205,12 +120,6 @@ if (donation2Modal) {
 }
 
 const donation3Modal = document.getElementById('donation3-modal');
-
-// function openDonation3Modal(): void {
-//   if (!donation2Modal) return;
-//   donation3Modal?.removeAttribute('hidden');
-//   document.body.style.overflow = 'hidden';
-// }
 
 function closeDonation3Modal(): void {
   if (!donation3Modal) return;
@@ -296,7 +205,6 @@ document.addEventListener('click', (e) => {
     btn?.setAttribute('aria-expanded', open ? 'true' : 'false');
     if (open) {
       syncThumb();
-      // focus panel for Esc support (without stealing tab order too aggressively)
       panel?.focus({ preventScroll: true });
     }
   }
@@ -324,7 +232,6 @@ document.addEventListener('click', (e) => {
     if (sel) sel.scrollIntoView({ block: 'nearest' });
   }
 
-  // Thumb sizing/position based on list scroll
   function syncThumb(): void {
     const view = list?.clientHeight ?? 0;
     const total = list?.scrollHeight ?? 0;
@@ -415,12 +322,9 @@ document.addEventListener('click', (e) => {
 
   document.addEventListener('mouseup', () => { drag = null; });
 
-  // initial selection (optional): highlight "Liz the Koala"
   const initial = opts.find(o => (o.getAttribute('data-value') === 'liz'));
   if (initial) setValue(initial);
-  // but keep placeholder like in screenshot? comment out previous 2 lines if you want placeholder initially.
 
-  // If you want placeholder initially exactly like on screenshot:
   if (root)
     root.dataset.hasValue = 'false';
   if (text)

@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
   <link rel="stylesheet" href="css/general-style.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/media.css">
@@ -47,6 +48,32 @@
             </a>
           </div>
         </div>
+        <!-- header functionality - copy -->
+        <div class="user-info" id="user-info">
+          <button class="user-icon" id="open-login-modal" type="button" aria-label="Open user menu" aria-haspopup="true" aria-expanded="false">
+            <span class="material-symbols-outlined">person</span>
+          </button>
+          <div class="header-user">
+            <span id="header-user-name"></span>
+          </div>
+          <div class="user-dropdown" id="user-dropdown" hidden>
+            <!-- TODO -->
+            <a class="user-dropdown__item" id="profile-info" href="#"> 
+              Profile information
+            </a>
+            <button class="user-dropdown__item" id="logout-button" type="button">
+              Sign Out
+            </button>
+            <!-- TODO -->
+            <a class="user-dropdown__item" href="../auth/signin.html" id="signin-link"> 
+              Sign In
+            </a>
+            <a class="user-dropdown__item" href="../auth/registration.html" id="registration-link"> 
+              Registration
+            </a>
+          </div>
+        </div>
+        <!-- END header functionality - copy -->
       </div>
     </div>
   </header>
@@ -155,5 +182,7 @@
       </div>
     </div>
   </footer>
+
+  <script type="module" src="./js/auth.ts"></script>
 </body>
 </html>

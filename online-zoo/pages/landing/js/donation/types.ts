@@ -1,5 +1,3 @@
-import type { IDonationCard } from "../../../../src/shared/auth/card.types";
-
 export type AmountType = 'preset' | 'other';
 
 export interface DonationStep1Data {
@@ -27,7 +25,12 @@ export interface DonationStep2Data {
   email: string;
 }
 
-export interface DonationStep3Data extends IDonationCard {
+export interface DonationStep3Data {
+  cardNumber: string;
+  cvv: string;
+  expirationMonth: string;
+  expirationYear: string;
+  expirationDate: string;
 }
 
 export const DONATION_STEP_1_EVENT = 'donation:step1-complete';

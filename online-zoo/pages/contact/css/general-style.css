@@ -520,3 +520,56 @@ h3 {
 }
 
 /* End FOOTER */
+
+
+/* header functionality - copy */
+.header .user-info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.header .user-icon {
+  background-color: transparent;
+  border: none;
+}
+
+.header .user-icon:hover {
+  color: var(--turquoise);
+  cursor: pointer;
+}
+
+.header .user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 160px;
+  padding: 8px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+.header .user-dropdown__item {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.user-dropdown[hidden],
+.user-dropdown__item[hidden],
+#header-user-name[hidden] {
+  display: none !important;
+}
+
+/* END header functionality - copy */
